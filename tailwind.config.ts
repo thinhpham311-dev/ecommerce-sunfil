@@ -13,6 +13,11 @@ export default {
           DEFAULT: "#025FCA",
           dark: "#013065",
         },
+        white: "#FFFFFF",
+        black: {
+          DEFAULT: "#1C252E",
+          secondary: "#637381"
+        },
         secondary: "#E6F1FF",
         "text-primary": "#1C252E",
         "text-secondary": "#637381",
@@ -21,6 +26,8 @@ export default {
           DEFAULT: "#FFAB00",
           light: "#FFD666",
         },
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
       fontFamily: {
         epilogue: ['var(--font-epilogue)', 'sans-serif'],
