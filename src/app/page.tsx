@@ -23,7 +23,7 @@ export default function Home() {
 
         {/* Counter Section */}
         <div className="flex flex-col items-center sm:items-start gap-4 w-full">
-          <h2 className="text-xl font-semibold font-[family-name:var(--font-geist-mono)]">
+          <h2 className="text-xl font-extrabold font-epilogue">
             Redux Counter Example
           </h2>
           <p className="text-lg font-medium">
@@ -46,7 +46,7 @@ export default function Home() {
         </div>
 
         {/* Instructions */}
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-epilogue">
           <li className="mb-2">
             Get started by editing{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
