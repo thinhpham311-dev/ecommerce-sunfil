@@ -23,7 +23,9 @@ export default function RootLayout({
       <body className={`${epilogue.variable} antialiased`}>
         <ReduxProvider>
           <Header />
-          {children}
+          <main>
+            {children}
+          </main>
           <StoreLocatorBanner />
           <Footer />
         </ReduxProvider>
