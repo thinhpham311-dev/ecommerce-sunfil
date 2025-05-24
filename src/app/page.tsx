@@ -1,6 +1,6 @@
 "use client";
 
-import Breadcrumb from "@/components/shared/Breadcrumb";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import FeaturedSection from "@/components/FeaturedSection"
 
 export default function Home() {

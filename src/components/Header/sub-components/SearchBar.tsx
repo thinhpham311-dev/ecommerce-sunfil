@@ -1,6 +1,6 @@
 // components/Header/sub-components/SearchBar.js
 import React from 'react';
-import { Button, Input } from '@/components/shared';
+import { Button, Input } from '@/components/ui';
 import { SearchIcon, CameraIcon } from '@/constants/icons.constant';
 
 const SearchBar = () => {

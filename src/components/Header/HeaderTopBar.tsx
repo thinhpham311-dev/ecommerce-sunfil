@@ -1,7 +1,7 @@
 import React from 'react';
 import { SaleIcon } from "@/constants/icons.constant"
 import { CONTACTMENU_DATA } from "@/data/navbarMenu.data"
-import { Navigation } from '@/components/shared';
+import { Navigation } from '@/components/ui';
 
 const HeaderTopBar = () => {
     return (

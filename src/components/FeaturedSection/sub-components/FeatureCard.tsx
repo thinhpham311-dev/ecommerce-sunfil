@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader, CardContent, CardIcon } from "@/components/shared"; // Điều chỉnh đường dẫn phù hợp
+import { Card, CardHeader, CardContent, CardIcon } from "@/components/ui"; // Điều chỉnh đường dẫn phù hợp
 
 interface FeatureCardProps {
     icon: React.ReactNode;
