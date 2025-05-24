@@ -1,7 +1,7 @@
 import React from 'react';
 import { HamberIcon, DownIcon } from "@/constants/icons.constant";
-import { Button } from '@/components/shared';
-import { Navigation } from '@/components/shared';
+import { Button } from '@/components/ui';
+import { Navigation } from '@/components/ui';
 import { MAINMENU_DATA, SUPPORTMENU_DATA } from '@/data/navbarMenu.data';
 
 const HeaderBottomBar = () => {

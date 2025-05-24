@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/shared';
+import { Button } from '@/components/ui';
 
 const NotFoundPage: React.FC = () => {
     return (
