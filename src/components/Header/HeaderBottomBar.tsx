@@ -1,27 +1,31 @@
 import React from 'react';
-import { HamberIcon } from "@/constants/icons.constant"
+import { HamberIcon, DownIcon } from "@/constants/icons.constant";
 import { Button } from '@/components/shared';
 import { Navigation } from '@/components/shared';
 import { MAINMENU_DATA, SUPPORTMENU_DATA } from '@/data/navbarMenu.data';
 
 const HeaderBottomBar = () => {
     return (
-        <div className="bg-white ">
-            <div className="container py-3 px-6 flex justify-between items-center mx-auto 2xl:gap-x-6 gap-x-3">
-                <div className='flex items-center gap-x-5'>
-                    <Button variant='primary' rounded='md' className='flex items-center gap-2'>
+        <div className="bg-white w-full">
+            <div className="container py-3 flex flex-wrap items-center justify-between gap-4">
+                <div className='w-full md:w-auto flex justify-between items-center gap-3 md:gap-5'>
+                    <Button
+                        variant='primary'
+                        rounded='md'
+                        className='flex items-center gap-2 w-full md:w-auto justify-center md:justify-start'
+                    >
                         <HamberIcon />
-                        <span className='text-base font-bold'>Danh mục Sản phẩm</span>
+                        <span className='text-base font-bold whitespace-nowrap'>Danh mục Sản phẩm</span>
+                        <DownIcon />
                     </Button>
                 </div>
-                <div className="hidden md:flex items-center flex-1  ">
-                    <div className='flex items-center justify-between w-full'>
-                        <Navigation links={MAINMENU_DATA} linkClassName='font-normal' />
-                        <Navigation links={SUPPORTMENU_DATA} linkClassName="font-bold" />
-                    </div>
+
+                <div className="hidden md:flex flex-1 items-center justify-between gap-6">
+                    <Navigation links={MAINMENU_DATA} linkClassName='font-normal text-base' />
+                    <Navigation links={SUPPORTMENU_DATA} linkClassName="font-bold text-base" />
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
