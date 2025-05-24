@@ -59,6 +59,9 @@ export default {
         "5xl": "3rem",
         "6xl": "3.75rem",
       },
+      backgroundImage: {
+        'footer-pattern': "url('/images/footer/footer-bg-pattern.jpg')",
+      },
     },
   },
   plugins: [

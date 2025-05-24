@@ -13,7 +13,7 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({
     links,
     className = "hidden lg:block",
-    linkClassName = "hover:text-primary text-black transition-colors duration-200 text-base font-normal",
+    linkClassName = "hover:text-primary text-black transition-colors duration-200 ",
     ulClassName = "flex  gap-x-6",
     liClassName = "",
 }) => {
