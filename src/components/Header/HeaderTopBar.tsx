@@ -6,7 +6,7 @@ import { Navigation } from '@/components/shared';
 const HeaderTopBar = () => {
     return (
         <div className="bg-primary-gradient  ">
-            <div className='container flex justify-between items-center py-2 px-6 mx-auto'>
+            <div className='container flex justify-between items-center py-2'>
                 <div className="flex items-center space-x-2">
                     <SaleIcon />
                     <p className='text-xs text-white'>Nhập mã <span className='uppercase text-warning font-bold'>NEWBIE</span> giảm ngay 10% cho lần đầu mua hàng.</p>

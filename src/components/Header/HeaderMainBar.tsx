@@ -6,7 +6,7 @@ import UserActions from './sub-components/UserActions';
 const HeaderMainBar = () => {
     return (
         <div className="bg-white  shadow-sm">
-            <div className="container mx-auto py-5 px-6 gap-x-10 flex justify-between items-center">
+            <div className="container  py-5  gap-x-10 flex justify-between items-center">
                 <Logo />
                 <div className="flex-1 w-full">
                     <SearchBar />
