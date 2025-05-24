@@ -13,8 +13,8 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({
     links,
     className = "hidden lg:block",
-    linkClassName = "hover:text-primary text-black transition-colors duration-200 ",
-    ulClassName = "flex  gap-x-6",
+    linkClassName = "text-black hover:text-primary text-base font-normal",
+    ulClassName = "flex gap-x-6",
     liClassName = "",
 }) => {
     return (
@@ -22,7 +22,7 @@ const Navigation: React.FC<NavigationProps> = ({
             <ul className={ulClassName}>
                 {links.map((item, index) => (
                     <li key={item.href || index} className={liClassName}>
-                        <Link href={item.href} className={`flex items-center space-x-2 ${linkClassName}`}>
+                        <Link href={item.href} className={`flex items-center space-x-2  transition-colors duration-200 ${linkClassName}`}>
                             {item.icon && <span>{item.icon}</span>}
                             <span>{item.text}</span>
                         </Link>
