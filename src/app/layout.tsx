@@ -3,6 +3,7 @@ import "./globals.css";
 import { APP_NAME, APP_DES } from "@/constants/app.constant";
 import ReduxProvider from "@/providers/ReduxProvider";
 import { epilogue } from "./fonts";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: APP_NAME,
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${epilogue.variable} antialiased`}>
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <Header />
+          {children}</ReduxProvider>
       </body>
     </html>
   );
