@@ -20,6 +20,7 @@ export default {
           DEFAULT: "#025FCA",
           dark: "#013065",
           base: "#0155C6",
+          light: "#37CFFF", // Added a new 'light' shade to primary color
         },
         white: "#FFFFFF",
         black: {
@@ -36,6 +37,7 @@ export default {
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'custom-blue': '#024897',
       },
       fontFamily: {
         epilogue: ['var(--font-epilogue)', 'sans-serif'],
@@ -54,7 +56,7 @@ export default {
         lg: "1.125rem",
         xl: "1.25rem",
         "2xl": "1.5rem",
-        "3xl": "1.75rem",
+        "3xl": "1.875rem",
         "4xl": "2.25rem",
         "5xl": "3rem",
         "6xl": "3.75rem",

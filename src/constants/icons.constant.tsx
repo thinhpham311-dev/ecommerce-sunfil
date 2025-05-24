@@ -147,6 +147,20 @@ export const ArrowRightIcon = () => {
 
 }
 
+export const AltArrowRight = () => {
+  return <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip0_5406_244)">
+      <path d="M3 1.6669L5 4.00023L3 6.33357" stroke="#919EAB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </g>
+    <defs>
+      <clipPath id="clip0_5406_244">
+        <rect width="8" height="8" fill="white" transform="translate(0 0.000244141)" />
+      </clipPath>
+    </defs>
+  </svg>
+
+}
+
 export const GooglePlayIcon = () => {
   return <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_5406_1313)">
