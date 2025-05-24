@@ -4,7 +4,9 @@ import { APP_NAME, APP_DES } from "@/constants/app.constant";
 import ReduxProvider from "@/providers/ReduxProvider";
 import { epilogue } from "./fonts";
 import Header from "@/components/Header";
+import StoreLocatorBanner from "@/components/StoreLocatorBanner"
 import Footer from "@/components/Footer";
+
 
 export const metadata: Metadata = {
   title: APP_NAME,
@@ -22,6 +24,7 @@ export default function RootLayout({
         <ReduxProvider>
           <Header />
           {children}
+          <StoreLocatorBanner />
           <Footer />
         </ReduxProvider>
       </body>
