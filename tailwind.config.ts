@@ -64,6 +64,9 @@ export default {
       backgroundImage: {
         'footer-pattern': "url('/images/footer/footer-bg-pattern.jpg')",
       },
+      boxShadow: {
+        'card': '0px 8px 16px 0px #919EAB29',
+      },
     },
   },
   plugins: [

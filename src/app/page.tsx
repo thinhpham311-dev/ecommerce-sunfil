@@ -1,6 +1,7 @@
 "use client";
 
 import Breadcrumb from "@/components/shared/Breadcrumb";
+import FeaturedSection from "@/components/FeaturedSection"
 
 export default function Home() {
   const breadcrumbItems = [
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <div>
       <Breadcrumb items={breadcrumbItems} className="py-5" />
+      <FeaturedSection />
     </div>
   );
 }
