@@ -17,10 +17,10 @@ export default function Home() {
         <div className="2xl:col-span-12 lg:col-span-10 md:col-span-8 col-span-1">
           hero slide
         </div>
-        <div className="2xl:col-span-4 lg:col-span-3 md:col-span-2 col-span-1">
+        <div className="2xl:col-span-3 lg:col-span-3 md:col-span-2 col-span-1">
           <SideNav />
         </div>
-        <div className="2xl:col-span-4 lg:col-span-3 md:col-span-2 col-span-1">
+        <div className="2xl:col-span-8 lg:col-span-3 md:col-span-2 col-span-1">
           product grid list
         </div>
       </div>

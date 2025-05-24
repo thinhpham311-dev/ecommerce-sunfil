@@ -161,6 +161,17 @@ export const AltArrowRight = () => {
 
 }
 
+interface IAltArrowUp {
+  isOpen: boolean
+}
+
+export const AltArrowUp = ({ isOpen }: IAltArrowUp) => {
+  return <svg className={` transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+    width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 15.8003L12 9.80029L5 15.8003" stroke="#1C252E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+}
+
 export const GooglePlayIcon = () => {
   return <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_5406_1313)">
