@@ -14,7 +14,7 @@ const Navigation: React.FC<NavigationProps> = ({
     links,
     className = "hidden lg:block",
     linkClassName = "hover:text-primary text-black transition-colors duration-200 text-base font-normal",
-    ulClassName = "flex gap-x-6",
+    ulClassName = "flex  2xl:gap-x-6 xl:gap-x-3 md:gap-x-3 gap-x-2",
     liClassName = "",
 }) => {
     return (

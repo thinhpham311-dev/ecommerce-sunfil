@@ -1,13 +1,14 @@
-// components/Header/sub-components/Logo.js
+import Image from 'next/image';
 import React from 'react';
 
 const Logo = () => {
     return (
         <div className="flex items-center">
-            <img
+            <Image
                 src="/images/header/logo_sunfil.svg"
                 alt="Your Company Logo"
-                className="h-[111px] w-auto"
+                width={250}
+                height={111}
             />
         </div>
     );
