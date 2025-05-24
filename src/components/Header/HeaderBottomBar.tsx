@@ -21,8 +21,8 @@ const HeaderBottomBar = () => {
                 </div>
 
                 <div className="hidden md:flex flex-1 items-center justify-between gap-6">
-                    <Navigation links={MAINMENU_DATA} linkClassName='font-normal text-base' />
-                    <Navigation links={SUPPORTMENU_DATA} linkClassName="font-bold text-base" />
+                    <Navigation links={MAINMENU_DATA} linkClassName='font-normal text-base text-black hover:text-primary' />
+                    <Navigation links={SUPPORTMENU_DATA} linkClassName="font-bold text-base text-black hover:text-primary" />
                 </div>
             </div>
         </div>
