@@ -3,6 +3,7 @@ import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import counterReducer from "./slices/counterSlice";
+import filtersReducer from "./slices/filtersSlice"
 import { PERSIST_STORE_NAME } from "@/constants/app.constant"
 
 import {
@@ -16,12 +17,14 @@ import {
 
 const rootReducer = combineReducers({
     counter: counterReducer,
+    filters: filtersReducer,
+
 });
 
 const persistConfig = {
     key: PERSIST_STORE_NAME,
     storage,
-    whitelist: ["counter"],
+    whitelist: ["counter", "filters"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
