@@ -7,7 +7,7 @@ import { MAINMENU_DATA, SUPPORTMENU_DATA } from '@/data/navbarMenu.data';
 const HeaderBottomBar = () => {
     return (
         <div className="bg-white ">
-            <div className="container py-3 px-6 flex justify-between items-center mx-auto gap-x-10">
+            <div className="container py-3 px-6 flex justify-between items-center mx-auto 2xl:gap-x-6 gap-x-3">
                 <div className='flex items-center gap-x-5'>
                     <Button variant='primary' rounded='md' className='flex items-center gap-2'>
                         <HamberIcon />

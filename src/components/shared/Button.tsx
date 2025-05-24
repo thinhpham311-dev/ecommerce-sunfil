@@ -3,7 +3,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 type RoundedVariant = 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
-type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'outline' | 'ghost'; // Thêm 'ghost' variant
+type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'outline' | 'ghost';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'size'> {
@@ -28,18 +28,17 @@ const Button: React.FC<ButtonProps> = ({
     rounded = 'md',
     ...props
 }) => {
-    // baseStyles đã có focus:outline-none, nên không cần thêm gì cho "không outline" mặc định của trình duyệt
     const baseStyles = 'font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50';
 
-    const variantStyles = {
-        primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
-        secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-400',
-        danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
-        outline: 'bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
-        ghost: 'bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-300', // Thêm variant 'ghost'
+    const variantStyles: Record<ButtonVariant, string> = {
+        primary: 'bg-primary-base text-white hover:bg-primary-dark focus:ring-primary',
+        secondary: 'bg-secondary text-text-primary hover:bg-primary/10 focus:ring-primary',
+        danger: 'bg-danger text-white hover:bg-red-800 focus:ring-danger',
+        outline: 'bg-transparent border border-primary text-primary hover:bg-primary/10 focus:ring-primary',
+        ghost: 'bg-transparent text-text-secondary hover:bg-black/5 focus:ring-black/20',
     };
 
-    const sizeStyles = {
+    const sizeStyles: Record<ButtonSize, string> = {
         sm: 'py-1 px-3 text-sm',
         md: 'py-2 px-4 text-base',
         lg: 'py-3 px-6 text-lg',
@@ -47,7 +46,16 @@ const Button: React.FC<ButtonProps> = ({
 
     const disabledStyles = 'opacity-50 cursor-not-allowed';
 
-    const roundedClass = `rounded-${rounded}`;
+    const roundedStyles: Record<RoundedVariant, string> = {
+        none: 'rounded-none',
+        sm: 'rounded-sm',
+        md: 'rounded-md',
+        lg: 'rounded-lg',
+        xl: 'rounded-xl',
+        '2xl': 'rounded-2xl',
+        '3xl': 'rounded-3xl',
+        full: 'rounded-full',
+    };
 
     return (
         <button
@@ -58,7 +66,7 @@ const Button: React.FC<ButtonProps> = ({
                 baseStyles,
                 variantStyles[variant],
                 sizeStyles[size],
-                roundedClass,
+                roundedStyles[rounded],
                 disabled && disabledStyles,
                 className
             )}
