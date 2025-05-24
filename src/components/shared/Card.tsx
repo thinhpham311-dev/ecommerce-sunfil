@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-
+import Image from 'next/image';
 
 
 // CardHeader component
@@ -49,7 +49,7 @@ const CardImage: React.FC<CardImageProps> = ({
     imageClassName = 'object-cover  rounded-2xl',
 }) => (
     <div className={`w-full overflow-hidden ${className}`}>
-        <img src={src} alt={alt} className={imageClassName} />
+        <Image src={src} alt={alt} fill={true} className={imageClassName} />
     </div>
 );
 
