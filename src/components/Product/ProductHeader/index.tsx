@@ -13,13 +13,13 @@ interface IProductHeaderProps {
 const ProductHeader: React.FC<IProductHeaderProps> = ({ title }) => {
 
     return (
-        <Card layout='horizontal' className="flex justify-between items-center p-0 gap-4 text-white">
+        <Card layout='horizontal' className="  flex-wrap justify-between items-center p-0 gap-4 text-white">
             <CardHeader className='p-0'>
                 <CardTitle className='text-2xl text-text-primary'>{title}</CardTitle>
             </CardHeader>
 
-            <CardContent>
-                <div className="flex  items-center space-x-8 ">
+            <CardContent className='p-0'>
+                <div className="flex flex-wrap items-center gap-x-5">
                     <SortOptions options={SORTOPTION_DATA} />
                     <PriceSelectSort options={PRICESORT_DATA} />
                 </div>
