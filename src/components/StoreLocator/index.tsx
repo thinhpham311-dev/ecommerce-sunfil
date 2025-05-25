@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { MapPinIcon, ArrowRightIcon } from "@/constants/icons.constant"
 
-const StoreLocatorBanner: React.FC = () => {
+const StoreLocator: React.FC = () => {
     return (
         <div className="bg-secondary py-4">
             <div className="container  flex items-center justify-between">
@@ -22,4 +22,4 @@ const StoreLocatorBanner: React.FC = () => {
     );
 };
 
-export default StoreLocatorBanner
+export default StoreLocator

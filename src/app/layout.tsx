@@ -4,7 +4,7 @@ import { APP_NAME, APP_DES } from "@/constants/app.constant";
 import ReduxProvider from "@/providers/ReduxProvider";
 import { epilogue } from "./fonts";
 import Header from "@/components/Header";
-import StoreLocatorBanner from "@/components/StoreLocatorBanner"
+import StoreLocator from "@/components/StoreLocator"
 import Footer from "@/components/Footer";
 
 
@@ -26,7 +26,7 @@ export default function RootLayout({
           <main>
             {children}
           </main>
-          <StoreLocatorBanner />
+          <StoreLocator />
           <Footer />
         </ReduxProvider>
       </body>
