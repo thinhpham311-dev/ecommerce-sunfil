@@ -23,7 +23,7 @@ const SortOptionButton: React.FC<SortOptionButtonProps> = ({ label, isSelected, 
         <Button
             variant={isSelected ? 'outline' : 'default'}
             onClick={onClick}
-            className={`relative`}
+            className={`relative bg-white`}
             size='md'
             rounded='md'
         >

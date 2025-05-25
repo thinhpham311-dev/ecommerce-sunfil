@@ -32,7 +32,7 @@ export default function Home() {
         <div className="2xl:col-span-2 lg:col-span-2 md:col-span-2 col-span-1">
           <ProductFilter filtersList={FILTER_DATA} />
         </div>
-        <div className="2xl:col-span-10 lg:col-span-8 md:col-span-6 col-span-1">
+        <div className="2xl:col-span-10 lg:col-span-8 md:col-span-6 col-span-1 grid gap-5">
           <ProductHeader title="Danh sách sản phẩm" />
           <ProductGrid products={PRODUCTS_DATA} />
         </div>
