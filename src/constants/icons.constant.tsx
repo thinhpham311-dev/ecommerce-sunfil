@@ -193,20 +193,87 @@ export const AltDownIcon = ({
 };
 
 
-
-export const AltRightIcon = () => {
-  return <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clipPath="url(#clip0_5406_244)">
-      <path d="M3 1.6669L5 4.00023L3 6.33357" stroke="#919EAB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </g>
-    <defs>
-      <clipPath id="clip0_5406_244">
-        <rect width="8" height="8" fill="white" transform="translate(0 0.000244141)" />
-      </clipPath>
-    </defs>
-  </svg>
-
+interface AltRightIconProps {
+  color?: string;
+  size?: number | string;
+  strokeWidth?: number;
+  className?: string;
 }
+
+export const AltRightIcon: React.FC<AltRightIconProps> = ({
+  color = '#919EAB',
+  size = 0,
+  strokeWidth = 1.5,
+  className = '',
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 8 8"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <g clipPath="url(#clip0_5406_244)">
+        <path
+          d="M3 1.6669L5 4.00023L3 6.33357"
+          stroke={color}
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_5406_244">
+          <rect width="8" height="8" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+interface AltLeftIconProps {
+  color?: string;
+  size?: number | string;
+  strokeWidth?: number;
+  className?: string;
+}
+
+export const AltLeftIcon: React.FC<AltLeftIconProps> = ({
+  color = '#919EAB',
+  size = 0,
+  strokeWidth = 1.5,
+  className = '',
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 8 8"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <g clipPath="url(#clip0_5406_244)">
+        <path
+          d="M5 1.6669L3 4.00023L5 6.33357"
+          stroke={color}
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_5406_244">
+          <rect width="8" height="8" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+
 
 export const ArrowRightIcon = () => {
   return <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">

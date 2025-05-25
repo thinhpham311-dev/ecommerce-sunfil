@@ -1,3 +1,8 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +22,26 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  @apply h-full;
+}
+
+html {
+  @apply h-full;
+}
+
+#__next,
+#root {
+  @apply h-full;
+}
+
+@layer components {
+  .swiper {
+    @apply h-full;
+  }
+
+  .swiper-slide {
+    @apply h-full flex flex-col;
+  }
 }
 
 @layer utilities {
