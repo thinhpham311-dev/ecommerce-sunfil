@@ -1,9 +1,9 @@
 "use client";
 
-import Breadcrumb from "@/components/ui/Breadcrumb";
-import FeaturedSection from "@/components/FeaturedSection";
-import SideNav from "@/components/SideNav";
 import { PRODUCTS_DATA } from "@/data/product.data";
+import Breadcrumb from "@/components/ui/Breadcrumb";
+import Feature from "@/components/Feature";
+import SideNav from "@/components/Product/ProductFilter";
 import ProductGrid from "@/components/Product/ProductGrid";
 import ProductSlide from "@/components/Product/ProductSlide"
 import ProductHeader from "@/components/Product/ProductHeader";
@@ -32,7 +32,7 @@ export default function Home() {
           <ProductGrid products={PRODUCTS_DATA} />
         </div>
       </div>
-      <FeaturedSection />
+      <Feature />
     </section>
   );
 }
