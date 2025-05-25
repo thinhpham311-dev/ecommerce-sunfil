@@ -16,7 +16,6 @@ export interface IFilterGroup {
     }[];
 }
 
-
 export interface IFilter {
     groups: {
         [key: string]: {
@@ -28,5 +27,4 @@ export interface IFilter {
             }[];
         };
     };
-
 }

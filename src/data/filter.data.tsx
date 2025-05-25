@@ -1,4 +1,4 @@
-import { IFilter } from "@/types/filters";
+import { IFilter } from "@/interfaces/IFilters";
 
 export const FILTER_DATA: IFilter = {
     groups: {

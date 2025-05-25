@@ -84,7 +84,7 @@ const CardImage: React.FC<CardImageProps> = ({
     className = '',
     imageClassName = 'object-cover  rounded-2xl',
 }) => (
-    <div className={`w-full overflow-hidden ${className}`}>
+    <div className={`w-full overflow-hidden ${className} `}>
         <Image src={src} alt={alt} fill={true} className={imageClassName} />
     </div>
 );

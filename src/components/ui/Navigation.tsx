@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { INavLinkItem } from '@/types/INavLinkItem'
+import { INavLinkItem } from '@/interfaces/INavLinkItem'
 
 interface NavigationProps {
     links: INavLinkItem[];

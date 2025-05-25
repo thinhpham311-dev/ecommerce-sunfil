@@ -1,4 +1,4 @@
-import { INavLinkItem } from "@/types/INavLinkItem"
+import { INavLinkItem } from "@/interfaces/INavLinkItem"
 import { ClockIcon, HandIcon, CarTranferIcon, ProcessIcon, TelephoneIcon, SmartPhoneIcon } from "@/constants/icons.constant"
 
 export const CONTACTMENU_DATA: INavLinkItem[] = [
