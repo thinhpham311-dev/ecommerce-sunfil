@@ -119,35 +119,82 @@ export const SmartPhoneIcon = () => {
 
 }
 
-export const DownIcon = () => {
-  return <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.69985 7.40025C6.54985 7.40025 6.42485 7.35025 6.29985 7.25025L0.549854 1.60025C0.324854 1.37525 0.324854 1.02525 0.549854 0.800247C0.774853 0.575247 1.12485 0.575247 1.34985 0.800247L6.69985 6.02525L12.0499 0.750247C12.2749 0.525247 12.6249 0.525247 12.8499 0.750247C13.0749 0.975247 13.0749 1.32525 12.8499 1.55025L7.09985 7.20025C6.97485 7.32525 6.84985 7.40025 6.69985 7.40025Z" fill="white" />
-  </svg>
 
+interface AltUpIconProps {
+  color?: string;
+  size?: number;
+  className?: string;
+  strokeWidth?: number;
 }
 
-export const AltUpIcon = () => {
-  return <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fillRule="evenodd" clipRule="evenodd" d="M11.5119 9.23085C11.7928 8.99011 12.2072 8.99011 12.4881 9.23085L19.4881 15.2309C19.8026 15.5004 19.839 15.9739 19.5695 16.2884C19.2999 16.6029 18.8264 16.6393 18.5119 16.3697L12 10.7881L5.48811 16.3697C5.17361 16.6393 4.70014 16.6029 4.43057 16.2884C4.161 15.9739 4.19743 15.5004 4.51192 15.2309L11.5119 9.23085Z" fill="#013065" />
-  </svg>
+export const AltUpIcon = ({
+  color = "#013065",
+  size = 24,
+  className,
+  strokeWidth,
+}: AltUpIconProps) => {
+  const height = (size * 25) / 24;
+  const adjustedStrokeWidth = strokeWidth ?? 2.25; // tăng từ 1.5 → 2.25 để khớp thị giác với icon nhỏ hơn
 
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={height}
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 15.8003L12 9.80029L5 15.8003"
+        stroke={color}
+        strokeWidth={adjustedStrokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+
+interface AltDownIconProps {
+  color?: string;
+  size?: number;
+  strokeWidth?: number;
+  className?: string;
 }
 
-export const AltDownIcon = () => {
-  return <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12.6666 6.80029L7.99992 10.8003L3.33325 6.80029" stroke="#1C252E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
+export const AltDownIcon = ({
+  color = "#1C252E",
+  size = 0,
+  strokeWidth = 1.5,
+  className,
+}: AltDownIconProps) => {
+  const height = (size * 17) / 16; // scale theo tỉ lệ gốc 16x17
 
-}
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={height}
+      viewBox="0 0 16 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.6666 6.80029L7.99992 10.8003L3.33325 6.80029"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 
-export const ArrowRightIcon = () => {
-  return <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5.33325 16.8003H26.6666M26.6666 16.8003L18.6666 8.80029M26.6666 16.8003L18.6666 24.8003" stroke="#025FCA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
 
-}
 
-export const AltArrowRight = () => {
+export const AltRightIcon = () => {
   return <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_5406_244)">
       <path d="M3 1.6669L5 4.00023L3 6.33357" stroke="#919EAB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -161,16 +208,14 @@ export const AltArrowRight = () => {
 
 }
 
-interface IAltArrowUp {
-  isOpen: boolean
+export const ArrowRightIcon = () => {
+  return <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.33325 16.8003H26.6666M26.6666 16.8003L18.6666 8.80029M26.6666 16.8003L18.6666 24.8003" stroke="#025FCA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+
 }
 
-export const AltArrowUp = ({ isOpen }: IAltArrowUp) => {
-  return <svg className={` transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
-    width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M19 15.8003L12 9.80029L5 15.8003" stroke="#1C252E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-}
+
 
 export const GooglePlayIcon = () => {
   return <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">

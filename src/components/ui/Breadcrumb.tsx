@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { AltArrowRight } from "@/constants/icons.constant"
+import { AltRightIcon } from "@/constants/icons.constant"
 
 interface BreadcrumbItem {
     label: string;
@@ -19,7 +19,7 @@ interface BreadcrumbProps {
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({
     items,
-    separator = <AltArrowRight />,
+    separator = <AltRightIcon />,
     className = "bg-transparent py-3 px-4 sm:px-6 lg:px-8",
     itemClassName = "text-text-secondary hover:text-blue-400 transition-colors duration-200",
     activeItemClassName = "text-custom-blue font-semibold",

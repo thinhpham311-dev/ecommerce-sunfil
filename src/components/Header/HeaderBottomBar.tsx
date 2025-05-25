@@ -1,5 +1,5 @@
 import React from 'react';
-import { HamberIcon, DownIcon } from "@/constants/icons.constant";
+import { HamberIcon, AltDownIcon } from "@/constants/icons.constant";
 import { Button } from '@/components/ui';
 import { Navigation } from '@/components/ui';
 import { MAINMENU_DATA, SUPPORTMENU_DATA } from '@/data/navbarMenu.data';
@@ -16,7 +16,7 @@ const HeaderBottomBar = () => {
                     >
                         <HamberIcon />
                         <span className='text-base font-bold whitespace-nowrap'>Danh mục Sản phẩm</span>
-                        <DownIcon />
+                        <AltDownIcon color="white" size={16} />
                     </Button>
                 </div>
 
