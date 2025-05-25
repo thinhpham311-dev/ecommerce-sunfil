@@ -30,7 +30,7 @@ export default {
         secondary: "#E6F1FF",
         "text-primary": "#1C252E",
         "text-secondary": "#637381",
-        danger: "#B71D18",
+        danger: { DEFAULT: "#B71D18", dark: "#7A0916" },
         warning: {
           DEFAULT: "#FFAB00",
           light: "#FFD666",

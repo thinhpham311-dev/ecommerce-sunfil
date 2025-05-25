@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IFilter } from '@/types/filters';
+import { IFilter } from '@/interfaces/IFilters';
 
 const initialState: IFilter = {
     groups: {}
