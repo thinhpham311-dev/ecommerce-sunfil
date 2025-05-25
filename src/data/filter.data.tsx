@@ -15,7 +15,7 @@ export const FILTER_DATA: IFilter = {
         priceRange: {
             title: 'Khoảng giá',
             options: [
-                { slug: 'under-100k', title: 'Dưới 100,000đ', checked: false },
+                { slug: 'under-100k', title: 'Dưới 100,000đ', checked: true },
                 { slug: '100k-300k', title: '100,000 đ - 300,000 đ', checked: false },
                 { slug: '300k-500k', title: '300,000 đ - 500,000 đ', checked: false },
                 { slug: 'up-500k', title: 'Trên 500,000 đ', checked: false },

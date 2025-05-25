@@ -31,7 +31,7 @@ const LanguageSelector: React.FC = () => {
                 aria-haspopup="true"
             >
                 {selectedLanguage.flag} {selectedLanguage.label}
-                <span><AltDownIcon /></span>
+                <span><AltDownIcon size={16} strokeWidth={1.5} /></span>
 
             </button>
 

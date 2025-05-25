@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, createContext, useContext, ReactNode } from "react";
-import { AltArrowUp } from "@/constants/icons.constant"
+import { AltDownIcon } from "@/constants/icons.constant"
 
 // Context để chia sẻ trạng thái mở/đóng
 const AccordionContext = createContext<{
@@ -34,16 +34,45 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
     return (
         <AccordionContext.Provider value={{ isOpen, toggle }}>
-            <div className={`border-b ${className}`}>{children}</div>
+            <div className={`border-b-[0.5px] ${className}`}>{children}</div>
         </AccordionContext.Provider>
     );
 };
-
-// AccordionHeader
-interface AccordionHeaderProps {
-    children: ReactNode;
+interface AccordionToggleButtonProps {
+    isOpen: boolean;
+    onClick: () => void;
+    size?: number;
+    strokeWidthClose?: number;
     className?: string;
 }
+
+export const AccordionToggleButton: React.FC<AccordionToggleButtonProps> = ({
+    isOpen,
+    onClick,
+    size = 24,
+    strokeWidthClose = 1,
+    className = '',
+}) => {
+    return (
+        <button
+            onClick={onClick}
+            aria-expanded={isOpen}
+            className={`flex items-center justify-center  ${className}`}
+            type="button"
+            style={{ transformOrigin: 'center' }}
+        >
+            <span className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
+                <AltDownIcon size={size} strokeWidth={strokeWidthClose} />
+            </span>
+        </button>
+    );
+};
+
+interface AccordionHeaderProps {
+    children: React.ReactNode;
+    className?: string;
+}
+
 const AccordionHeader: React.FC<AccordionHeaderProps> = ({
     children,
     className = '',
@@ -56,15 +85,13 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
     const { isOpen, toggle } = context;
 
     return (
-        <button
-            onClick={toggle}
-            className={`w-full flex justify-between items-center  ${className}`}
-        >
+        <div className={`w-full flex justify-between items-center ${className}`}>
             <div>{children}</div>
-            <AltArrowUp isOpen={isOpen} />
-        </button>
+            <AccordionToggleButton isOpen={isOpen} onClick={toggle} />
+        </div>
     );
 };
+
 
 // AccordionCollapse
 interface AccordionCollapseProps {
@@ -76,7 +103,9 @@ const AccordionCollapse: React.FC<AccordionCollapseProps> = ({
     className = '',
 }) => {
     const context = useContext(AccordionContext);
-    if (!context) throw new Error("AccordionCollapse must be used inside AccordionItem");
+    if (!context) {
+        throw new Error("AccordionCollapse must be used inside AccordionItem");
+    }
 
     const { isOpen } = context;
 

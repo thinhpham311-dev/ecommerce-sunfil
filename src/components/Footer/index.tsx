@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
                         className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                         aria-label="Scroll to top"
                     >
-                        <AltUpIcon />
+                        <AltUpIcon size={24} strokeWidth={1.5} />
                     </button>
                 )}
             </div>
