@@ -4,10 +4,10 @@ import { MapPinIcon, ArrowRightIcon } from "@/constants/icons.constant"
 
 const StoreLocatorBanner: React.FC = () => {
     return (
-        <div className="bg-secondary py-4 px-6">
+        <div className="bg-secondary py-4">
             <div className="container  flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                    <div className=" text-white rounded-md p-1.5">
+                    <div className=" text-white rounded-md">
                         <MapPinIcon />
                     </div>
                     <p className="text-black font-medium text-sm md:text-3xl">
