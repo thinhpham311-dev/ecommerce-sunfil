@@ -4,7 +4,8 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FeaturedSection from "@/components/FeaturedSection";
 import SideNav from "@/components/SideNav";
 import { PRODUCTS_DATA } from "@/data/product.data";
-import ProductGrid from "@/components/ProductGrid";
+import ProductGrid from "@/components/Product/ProductGrid";
+import ProductHeader from "@/components/Product/ProductHeader";
 
 export default function Home() {
   const breadcrumbItems = [
@@ -23,6 +24,7 @@ export default function Home() {
           <SideNav />
         </div>
         <div className="2xl:col-span-10 lg:col-span-8 md:col-span-6 col-span-1">
+          <ProductHeader title="Danh sách sản phẩm" />
           <ProductGrid products={PRODUCTS_DATA} />
         </div>
       </div>

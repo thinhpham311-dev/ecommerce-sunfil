@@ -3,7 +3,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 type RoundedVariant = 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
-type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'outline' | 'ghost';
+type ButtonVariant = 'default' | 'primary' | 'secondary' | 'danger' | 'outline' | 'ghost';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'size'> {
@@ -31,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     const baseStyles = 'font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50';
 
     const variantStyles: Record<ButtonVariant, string> = {
+        default: 'bg-white text-black hover:text-white hover:bg-primary-dark focus:ring-primary border border-white',
         primary: 'bg-primary-base text-white hover:bg-primary-dark focus:ring-primary',
         secondary: 'bg-secondary text-text-primary hover:bg-primary/10 focus:ring-primary',
         danger: 'bg-danger text-white hover:bg-red-800 focus:ring-danger',

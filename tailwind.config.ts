@@ -67,6 +67,9 @@ export default {
       boxShadow: {
         'card': '0px 8px 16px 0px #919EAB29',
       },
+      clipPath: {
+        'triangle-br': 'polygon(0 0, 100% 0, 100% 100%)', // tên tùy chọn
+      },
     },
   },
   plugins: [
@@ -81,5 +84,7 @@ export default {
         },
       });
     },
+    require('tailwind-clip-path'),
+
   ],
 } satisfies Config;

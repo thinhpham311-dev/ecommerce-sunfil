@@ -5,6 +5,7 @@ import { combineReducers } from "redux";
 import counterReducer from "./slices/counterSlice";
 import filtersReducer from "./slices/filtersSlice"
 import { PERSIST_STORE_NAME } from "@/constants/app.constant"
+import sortReducer from "./slices/sortSlice"
 
 import {
     FLUSH,
@@ -18,13 +19,13 @@ import {
 const rootReducer = combineReducers({
     counter: counterReducer,
     filters: filtersReducer,
-
+    sort: sortReducer
 });
 
 const persistConfig = {
     key: PERSIST_STORE_NAME,
     storage,
-    whitelist: ["counter", "filters"],
+    whitelist: ["counter", "filters", "sort"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
