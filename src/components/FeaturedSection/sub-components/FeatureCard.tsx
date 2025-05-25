@@ -14,7 +14,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
 }) => {
     return (
-        <Card clickable layout="horizontal" className="px-3 py-6 shadow-card rounded-lg">
+        <Card clickable layout="horizontal" className="px-3 py-6 shadow-card rounded-lg bg-white gap-x-4">
             <CardHeader className="p-0">
                 <CardIcon icon={icon} />
             </CardHeader>

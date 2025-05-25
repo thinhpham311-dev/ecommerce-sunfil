@@ -13,8 +13,8 @@ export default function Home() {
   ];
 
   return (
-    <div className="container px-4">
-      <Breadcrumb items={breadcrumbItems} className="py-5" />
+    <section className="container px-4 py-6 flex flex-col gap-5">
+      <Breadcrumb items={breadcrumbItems} className="p-0" />
       <div className="grid 2xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-cols-1 gap-5">
         <div className="2xl:col-span-12 lg:col-span-10 md:col-span-8 col-span-1">
           hero slide
@@ -27,6 +27,6 @@ export default function Home() {
         </div>
       </div>
       <FeaturedSection />
-    </div>
+    </section>
   );
 }

@@ -47,7 +47,7 @@ export default function FilterGroupsUI() {
                                     </CardHeader>
                                     <AccordionCollapse>
                                         <CardContent className='pb-0 px-4'>
-                                            <div className="space-y-1">
+                                            <div className="space-y-3">
                                                 {group.options.map((option) => (
                                                     <label key={option.slug} className="flex items-center gap-2">
                                                         <input
