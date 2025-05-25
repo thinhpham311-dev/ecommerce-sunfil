@@ -5,6 +5,7 @@ import FeaturedSection from "@/components/FeaturedSection";
 import SideNav from "@/components/SideNav";
 import { PRODUCTS_DATA } from "@/data/product.data";
 import ProductGrid from "@/components/Product/ProductGrid";
+import ProdictSlide from "@/components/Product/ProductSlide"
 import ProductHeader from "@/components/Product/ProductHeader";
 
 export default function Home() {
@@ -19,6 +20,9 @@ export default function Home() {
       <div className="grid 2xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-cols-1 gap-5">
         <div className="2xl:col-span-12 lg:col-span-10 md:col-span-8 col-span-1">
           hero slide
+        </div>
+        <div className="2xl:col-span-12 lg:col-span-10 md:col-span-8 col-span-1">
+          <ProdictSlide products={PRODUCTS_DATA} />
         </div>
         <div className="2xl:col-span-2 lg:col-span-2 md:col-span-2 col-span-1">
           <SideNav />

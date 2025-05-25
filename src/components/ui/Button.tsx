@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 type RoundedVariant = 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
 type ButtonVariant = 'default' | 'primary' | 'secondary' | 'danger' | 'outline' | 'ghost';
-type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
 
 interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'size'> {
     children: React.ReactNode;
@@ -43,6 +43,7 @@ const Button: React.FC<ButtonProps> = ({
         sm: 'py-1 px-3 text-sm',
         md: 'py-2 px-4 text-base',
         lg: 'py-3 px-6 text-lg',
+        icon: 'w-10 h-10 flex items-center justify-center text-base'
     };
 
     const disabledStyles = 'opacity-50 cursor-not-allowed';
