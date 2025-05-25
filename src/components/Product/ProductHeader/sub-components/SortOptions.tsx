@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from '@/components/ui';
 import React from 'react';
 import { ISortListOption } from '@/interfaces/ISortOption';

@@ -1,3 +1,4 @@
+"use client";
 import ProductCard from './sub-components/ProductCard';
 import { IProduct } from '@/interfaces/IProduct';
 

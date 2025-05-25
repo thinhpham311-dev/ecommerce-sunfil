@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+"use client";
+
+import React from 'react';
 import { Card, CardHeader, CardContent, CardTitle } from '@/components/ui';
 import SortOptions from "./sub-components/SortOptions"
 import PriceSelectSort from './sub-components/PriceSelectSort';
