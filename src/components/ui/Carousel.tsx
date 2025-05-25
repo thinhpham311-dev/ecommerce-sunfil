@@ -19,15 +19,10 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({
     children,
-    slidesPerView = 2,
-    breakpoints = {
-        768: { slidesPerView: 3 },
-        1024: { slidesPerView: 5 },
-        1536: { slidesPerView: 5 },
-    },
+    slidesPerView,
+    breakpoints,
     spaceBetween = 20,
     showNavigation = true,
-
 }) => {
     return (
         <div className="relative">

@@ -1,4 +1,4 @@
-import FeatureCard from "./sub-components/FeatureCard"
+import FeatureCard from "./FeatureCard"
 import { FEATURE_DATA } from "@/data/feature.data";
 
 const FeaturedSection: React.FC = () => {
