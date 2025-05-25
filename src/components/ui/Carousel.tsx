@@ -11,6 +11,9 @@ interface CarouselProps {
     slidesPerView?: number;
     breakpoints?: Record<number, { slidesPerView: number }>;
     spaceBetween?: number;
+    showNavigation?: boolean;
+    navPosition?: string; // ví dụ: "top-1/2"
+    navClassName?: string; // bổ sung class như left/right spacing
 }
 
 
@@ -23,6 +26,8 @@ const Carousel: React.FC<CarouselProps> = ({
         1536: { slidesPerView: 5 },
     },
     spaceBetween = 20,
+    showNavigation = true,
+
 }) => {
     return (
         <div className="relative">
@@ -42,47 +47,51 @@ const Carousel: React.FC<CarouselProps> = ({
                             {child}
                         </div>
                     </SwiperSlide>
-
                 ))}
-                <CarouselPrevButton />
-                <CarouselNextButton />
             </Swiper>
+
+            {showNavigation && (
+                <>
+                    <CarouselNavButton direction="prev" />
+                    <CarouselNavButton direction="next" />
+                </>
+            )}
         </div>
     );
 };
 
 
-const CarouselPrevButton = () => {
+interface CarouselNavButtonProps {
+    direction: 'prev' | 'next';
+    position?: string; // Tailwind positioning, e.g., "top-1/2 left-2"
+    iconColor?: string;
+    iconSize?: number;
+    strokeWidth?: number;
+    className?: string;
+}
+
+const CarouselNavButton: React.FC<CarouselNavButtonProps> = ({
+    direction,
+    iconColor = 'black',
+    iconSize = 24,
+    strokeWidth = 0.5,
+}) => {
+    const isPrev = direction === 'prev';
+    const baseClass = isPrev ? 'swiper-button-prev-custom' : 'swiper-button-next-custom';
+    const sidePosition = isPrev ? '-left-5' : '-right-5';
+    const Icon = isPrev ? AltLeftIcon : AltRightIcon;
+
     return (
         <Button
             rounded="full"
             variant="secondary"
             size="icon"
-            className="swiper-button-prev-custom aspect-square absolute top-1/2 left-2 z-10 transform -translate-y-1/2"
-            aria-label="Previous"
+            className={`absolute transform -translate-y-1/2 aspect-square z-50 top-1/2 hover:bg-secondary ${sidePosition} ${baseClass}`}
+            aria-label={isPrev ? 'Previous' : 'Next'}
         >
-            <span className=''>
-                <AltLeftIcon size={24} strokeWidth={0.5} color="black" />
-            </span>
+            <Icon size={iconSize} strokeWidth={strokeWidth} color={iconColor} />
         </Button>
     );
 };
-
-
-const CarouselNextButton = () => {
-    return (
-        <Button
-            rounded="full"
-            variant="secondary"
-            size="icon"
-            className="swiper-button-next-custom aspect-square absolute top-1/2 right-2 z-10 transform -translate-y-1/2"
-            aria-label="Next"
-        >
-            <AltRightIcon size={24} strokeWidth={0.5} color="black" />
-        </Button>
-    );
-};
-
-
-export { Carousel, CarouselPrevButton, CarouselNextButton };
+export { Carousel, CarouselNavButton };
 
