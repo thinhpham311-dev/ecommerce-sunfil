@@ -1,3 +1,4 @@
+"use client";
 import { Button, Card, CardContent, CardImage, CardTitle, Badge, CardHeader, CardFooter } from '@/components/ui';
 import { IProduct } from '@/interfaces/IProduct';
 import { formatCurrency } from "@/utils"

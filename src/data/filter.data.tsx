@@ -49,7 +49,5 @@ export const FILTER_DATA: IFilter = {
 
             ],
         },
-
-
     },
 };

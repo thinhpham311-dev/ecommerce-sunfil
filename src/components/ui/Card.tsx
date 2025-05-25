@@ -96,7 +96,7 @@ interface CardContentProps {
 }
 
 const CardContent: React.FC<CardContentProps> = ({ children, className = 'px-3 pb-3' }) => (
-    <div className={`flex flex-col flex-1 ${className}`}>
+    <div className={`flex flex-col  ${className}`}>
         {children}
     </div>
 );
