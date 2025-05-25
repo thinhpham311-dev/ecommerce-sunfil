@@ -7,17 +7,21 @@ import {
     toggleOption,
     initializeFilters,
 } from '@/store/slices/filtersSlice';
-import { FILTER_DATA } from "@/data/filter.data"
 import { Card, CardContent, CardHeader, CardTitle, CardIcon, Accordion, AccordionCollapse, AccordionHeader, AccordionItem } from '@/components/ui';
 import { FilterIcon } from "@/constants/icons.constant"
+import { IFilter } from "@/interfaces/IFilters"
 
-export default function FilterGroupsUI() {
+interface IProductFilter {
+    filtersList: IFilter
+}
+
+const ProductFilter: React.FC<IProductFilter> = ({ filtersList }) => {
     const filters = useSelector((state: RootState) => state.filters);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(initializeFilters(FILTER_DATA));
-    }, [dispatch]);
+        dispatch(initializeFilters(filtersList));
+    }, [dispatch, filtersList]);
 
     if (!filters.groups) {
         return null;
@@ -72,3 +76,5 @@ export default function FilterGroupsUI() {
         </section >
     );
 }
+
+export default ProductFilter

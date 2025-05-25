@@ -5,9 +5,11 @@ import { AppleStoreIcon, GooglePlayIcon } from "@/constants/icons.constant"
 
 const DownloadAppSection: React.FC = () => {
     return (
-        <div className=" space-y-4">
-            <h3 className="font-semibold text-text-secondary text-base">Download App</h3>
-            <div className="grid gap-3">
+        <div className="grid space-y-4  place-items-end">
+            <div className='max-w-full w-[230px]'>
+                <h3 className="font-semibold text-text-secondary text-2xl">Download App</h3>
+            </div>
+            <div className="grid gap-3 ">
                 <Link
                     href="https://play.google.com/store/apps/details?id=your.app.id"
                     target="_blank"

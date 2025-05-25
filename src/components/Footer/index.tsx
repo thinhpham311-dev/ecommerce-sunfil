@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="relative bg-footer-pattern bg-cover bg-center bg-no-repeat py-16">
             <div className="container  grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-6">
-                <div className='col-span-full md:col-span-2 lg:col-span-5'>
+                <div className='col-span-full md:col-span-2 lg:col-span-6'>
                     <CompanyInfo />
                 </div>
                 <div className='col-span-full md:col-span-1 lg:col-span-2'>
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                 <div className='col-span-full md:col-span-1 lg:col-span-2'>
                     <LegalLinks />
                 </div>
-                <div className='col-span-full md:col-span-4 lg:col-span-3'>
+                <div className='col-span-full md:col-span-4 lg:col-span-2'>
                     <DownloadAppSection />
                 </div>
             </div>

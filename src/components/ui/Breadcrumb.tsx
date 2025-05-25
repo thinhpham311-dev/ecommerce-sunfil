@@ -19,7 +19,7 @@ interface BreadcrumbProps {
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({
     items,
-    separator = <AltRightIcon />,
+    separator = <AltRightIcon size={8} />,
     className = "bg-transparent py-3 px-4 sm:px-6 lg:px-8",
     itemClassName = "text-text-secondary hover:text-blue-400 transition-colors duration-200",
     activeItemClassName = "text-custom-blue font-semibold",

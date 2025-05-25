@@ -12,11 +12,11 @@ const SitemapLinks: React.FC = () => {
 
     return (
         <div className="flex flex-col space-y-4">
-            <h3 className="font-semibold text-text-secondary text-base">Sitemap</h3>
+            <h3 className="font-semibold text-text-secondary text-2xl">Sitemap</h3>
             <ul className="space-y-2">
                 {links.map((link) => (
                     <li key={link.name}>
-                        <Link href={link.href} className="text-text-secondary hover:text-primary transition-colors duration-200">
+                        <Link href={link.href} className="text-text-secondary text-base hover:text-primary transition-colors duration-200">
                             {link.name}
                         </Link>
                     </li>
