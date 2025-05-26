@@ -4,9 +4,9 @@ import { Button } from '@/components/ui';
 import React from 'react';
 import { ISortListOption } from '@/interfaces/ISortOption';
 import { CheckIcon } from '@/constants/icons.constant';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSortBy } from "@/store/slices/sortSlice"
+import { setSortBy } from "@/store/base/sortSlice"
 import { RootState } from "@/store"
+import { useAppDispatch, useAppSelector } from '@/utils/hooks/useStoreIO';
 
 interface SortOptionsProps {
     options: ISortListOption[];
@@ -41,9 +41,8 @@ const SortOptionButton: React.FC<SortOptionButtonProps> = ({ label, isSelected, 
 
 
 const SortOptions: React.FC<SortOptionsProps> = ({ options }) => {
-    const dispatch = useDispatch();
-    const sortBy = useSelector((state: RootState) => state.sort.sortBy);
-
+    const dispatch = useAppDispatch();
+    const sortBy = useAppSelector((state: RootState) => state.base.sort.sortBy);
     return (
         <div className="flex items-center space-x-2">
             <span className="text-text-secondary text-base">Sắp xếp theo</span>
