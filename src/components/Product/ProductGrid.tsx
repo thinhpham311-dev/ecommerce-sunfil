@@ -4,13 +4,36 @@ import { IProduct } from '@/interfaces/IProduct';
 
 interface ProductGridProps {
     products: IProduct[];
+    columns?: {
+        base?: number;      // grid-cols-{n}
+        md?: number;        // md:grid-cols-{n}
+        lg?: number;        // lg:grid-cols-{n}
+        xl?: number;        // xl:grid-cols-{n}
+        '2xl'?: number;     // 2xl:grid-cols-{n}
+    };
 }
 
-const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
+const getGridClass = (columns?: ProductGridProps['columns']) => {
+    const breakpoints = ['base', 'md', 'lg', 'xl', '2xl'] as const;
+    const gridClasses = breakpoints.map(bp => {
+        const col = columns?.[bp];
+        if (!col) {
+            return '';
+        }
+        return bp === 'base'
+            ? `grid-cols-${col}`
+            : `${bp}:grid-cols-${col}`;
+    });
+    return gridClasses.join(' ').trim();
+};
+
+const ProductGrid: React.FC<ProductGridProps> = ({ products, columns }) => {
+    const gridClass = getGridClass(columns);
+
     return (
-        <div className="grid 2xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-5">
+        <div className={`grid ${gridClass} gap-5`}>
             {products.map(product => (
-                <div key={product.id} className="col-span-1" >
+                <div key={product.id} className="col-span-1">
                     <ProductCard item={product} />
                 </div>
             ))}
@@ -18,4 +41,4 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
     );
 };
 
-export default ProductGrid
+export default ProductGrid;

@@ -25,7 +25,6 @@ const PriceSelectSort: React.FC<PriceSelectSortProps> = ({ options }) => {
             value={sortBy}
             onChange={handlePriceSortChange}
             name="priceSort"
-
         />
     );
 };
