@@ -18,26 +18,30 @@ export default function Home() {
   ];
 
   return (
-    <section className="container px-4 py-6 flex flex-col gap-5">
+    <div className="container px-4 py-6 flex flex-col gap-5">
       <div className="grid 2xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-cols-1 md:gap-y-10 gap-y-5 gap-x-5">
         <div className="2xl:col-span-12 lg:col-span-10 md:col-span-8 col-span-1 ">
           <Breadcrumb items={breadcrumbItems} className="p-0" />
         </div>
         <div className="2xl:col-span-12 lg:col-span-10 md:col-span-8 col-span-1 rounded-lg overflow-hidden">
-          <section className="bg-primary-base md:gap-0 gap-3">
+          <div className="bg-primary-base md:gap-0 gap-3">
             <Hero heroImages={HEROIMAGES_DATA} />
             <ProductSlide products={PRODUCTS_DATA} />
-          </section>
+          </div>
         </div>
-        <div className="2xl:col-span-2 lg:col-span-2 md:col-span-2 col-span-1">
-          <ProductFilter filtersList={FILTER_DATA} />
-        </div>
-        <div className="2xl:col-span-10 lg:col-span-8 md:col-span-6 col-span-1 grid gap-5">
-          <ProductHeader title="Danh sách sản phẩm" />
-          <ProductGrid products={PRODUCTS_DATA} />
+        <div className="2xl:col-span-12 lg:col-span-10 md:col-span-8 col-span-1">
+          <div className="grid 2xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-cols-1 md:gap-y-10 gap-y-5 gap-x-5">
+            <div className="2xl:col-span-2 lg:col-span-2 md:col-span-2 col-span-1">
+              <ProductFilter filtersList={FILTER_DATA} />
+            </div>
+            <div className="2xl:col-span-10 lg:col-span-8 md:col-span-6 col-span-1 grid gap-5">
+              <ProductHeader title="Danh sách sản phẩm" />
+              <ProductGrid products={PRODUCTS_DATA} />
+            </div>
+          </div>
         </div>
       </div>
       <Feature />
-    </section >
+    </div >
   );
 }
