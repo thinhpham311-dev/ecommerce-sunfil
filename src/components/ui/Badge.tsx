@@ -15,7 +15,7 @@ const variantStyles = {
     error: "bg-red-100 text-red-800",
 };
 
-export const Badge = ({
+const Badge = ({
     children,
     variant = "default",
     className = "",
@@ -32,3 +32,5 @@ export const Badge = ({
         </span>
     );
 }
+
+export default Badge

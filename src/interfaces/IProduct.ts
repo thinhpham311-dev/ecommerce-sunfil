@@ -1,23 +1,3 @@
-
-
-export type Category = {
-    id: string;
-    name: string;
-    slug: string;
-
-}
-export type Brand = {
-    id: string;
-    name: string;
-    slug: string;
-}
-
-export type Origin = {
-    id: string;
-    name: string;
-    slug: string;
-}
-
 export interface IProduct {
     id: string;
     name: string;

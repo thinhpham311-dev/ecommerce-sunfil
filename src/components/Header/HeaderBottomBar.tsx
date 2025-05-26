@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigation } from '@/components/ui';
 import CategoriesMenu from './sub-components/CategoriesMenu';
 import { MAINMENU_DATA, SUPPORTMENU_DATA } from '@/data/navbarMenu.data';
+// import { CATEGORY_DATA } from "@/data/category.data"
 
 const HeaderBottomBar = () => {
     return (
