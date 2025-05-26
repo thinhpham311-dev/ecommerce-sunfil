@@ -2,15 +2,13 @@
 
 import React from 'react';
 import { Card, CardHeader, CardContent, CardTitle } from '@/components/ui';
-import SortOptions from "./sub-components/SortOptions"
-import PriceSelectSort from './sub-components/PriceSelectSort';
-import { SORTOPTION_DATA, PRICESORT_DATA } from "@/data/sort.data"
 
 interface IProductHeaderProps {
-    title?: string
+    title?: string,
+    children?: React.ReactNode
 }
 
-const ProductHeader: React.FC<IProductHeaderProps> = ({ title }) => {
+const ProductHeader: React.FC<IProductHeaderProps> = ({ title, children }) => {
 
     return (
         <Card layout='horizontal' className="  flex-wrap justify-between items-center p-0 gap-4 text-white">
@@ -20,12 +18,14 @@ const ProductHeader: React.FC<IProductHeaderProps> = ({ title }) => {
 
             <CardContent className='p-0'>
                 <div className="flex flex-wrap items-center gap-x-5">
-                    <SortOptions options={SORTOPTION_DATA} />
-                    <PriceSelectSort options={PRICESORT_DATA} />
+                    {children}
                 </div>
             </CardContent>
         </Card>
     );
 };
+
+export { default as PriceSelectSort } from "./PriceSelectSort"
+export { default as SortOptions } from "./SortOptions"
 
 export default ProductHeader;

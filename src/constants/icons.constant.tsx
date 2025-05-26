@@ -273,6 +273,37 @@ export const AltLeftIcon: React.FC<AltLeftIconProps> = ({
   );
 };
 
+interface IDoubleAltRightIconProps {
+  color?: string;
+  size?: number;
+  strokeWidth?: number;
+};
+
+export const DoubleAltRightIcon = ({
+  color = "#0373F3",
+  size = 20,
+  strokeWidth = 1.5,
+}: IDoubleAltRightIconProps) => {
+  const width = (size * 21) / 20; // Giữ tỉ lệ SVG gốc
+  return (
+    <svg
+      width={width}
+      height={size}
+      viewBox="0 0 21 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6.12916 3.69204C6.39123 3.4674 6.7858 3.49775 7.01044 3.75983L12.0104 9.59316C12.2111 9.82722 12.2111 10.1726 12.0104 10.4067L7.01044 16.24C6.7858 16.5021 6.39123 16.5324 6.12916 16.3078C5.86708 16.0831 5.83673 15.6886 6.06136 15.4265L10.7127 9.99991L6.06136 4.57332C5.83673 4.31124 5.86708 3.91668 6.12916 3.69204ZM9.46265 3.69213C9.72473 3.46749 10.1193 3.49784 10.3439 3.75992L15.3439 9.59325C15.5446 9.82731 15.5446 10.1727 15.3439 10.4067L10.3439 16.2401C10.1193 16.5022 9.72473 16.5325 9.46265 16.3079C9.20057 16.0832 9.17022 15.6887 9.39486 15.4266L14.0462 10L9.39486 4.57341C9.17022 4.31133 9.20057 3.91677 9.46265 3.69213Z"
+        fill={color}
+        stroke={color}
+        strokeWidth={strokeWidth}
+      />
+    </svg>
+  );
+};
 
 
 export const ArrowRightIcon = () => {

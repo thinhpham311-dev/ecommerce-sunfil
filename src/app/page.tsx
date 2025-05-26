@@ -2,13 +2,17 @@
 
 import { PRODUCTS_DATA } from "@/data/product.data";
 import { HEROIMAGES_DATA } from "@/data/hero.data";
-import { FILTER_DATA } from "@/data/filter.data"
+import { FILTER_DATA } from "@/data/filter.data";
+import { SORTOPTION_DATA, PRICESORT_DATA } from "@/data/sort.data"
+
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import Feature from "@/components/Feature";
 import ProductFilter from "@/components/Product/ProductFilter";
 import ProductGrid from "@/components/Product/ProductGrid";
 import ProductSlide from "@/components/Product/ProductSlide"
+import { SortOptions, PriceSelectSort } from "@/components/Product/ProductHeader";
 import ProductHeader from "@/components/Product/ProductHeader";
+
 import Hero from "@/components/Hero";
 
 export default function Home() {
@@ -35,8 +39,11 @@ export default function Home() {
               <ProductFilter filtersList={FILTER_DATA} />
             </div>
             <div className="2xl:col-span-10 lg:col-span-8 md:col-span-6 col-span-1 grid gap-5">
-              <ProductHeader title="Danh sách sản phẩm" />
-              <ProductGrid products={PRODUCTS_DATA} />
+              <ProductHeader title="Danh sách sản phẩm" >
+                <SortOptions options={SORTOPTION_DATA} />
+                <PriceSelectSort options={PRICESORT_DATA} />
+              </ProductHeader>
+              <ProductGrid products={PRODUCTS_DATA} columns={{ base: 2, md: 3, lg: 4, '2xl': 5 }} />
             </div>
           </div>
         </div>

@@ -7,15 +7,16 @@ import CategoryCard from "./CategoryCard"
 
 interface ICategoriesMenuProps {
     categories: ICategory[]
+    children?: React.ReactNode
 }
 
-const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories }) => {
+const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories, children }) => {
     return (
         <Card className="lg:min-w-[1400px] mx-auto container p-0">
             <CardContent className="p-3">
                 <TabsProvider defaultTab={categories[0]?.id} type="hover">
                     <div className="grid 2xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-cols-1 md:gap-y-10 gap-y-5 gap-x-5">
-                        <div className="2xl:col-span-2 lg:col-span-2 md:col-span-2 col-span-1">
+                        <div className="2xl:col-span-3 lg:col-span-2 md:col-span-2 col-span-1">
                             <TabList>
                                 {categories?.map((cat) => (
                                     <TabItem key={cat.id} tabKey={cat.id}>
@@ -24,7 +25,7 @@ const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories }) => {
                                 ))}
                             </TabList>
                         </div>
-                        <div className="2xl:col-span-10 lg:col-span-8 md:col-span-6 col-span-1 grid gap-5">
+                        <div className="2xl:col-span-9 lg:col-span-8 md:col-span-6 col-span-1 grid gap-5">
                             <TabContent>
                                 {categories?.map((cat) => (
                                     <TabPanel key={cat.id} tabKey={cat.id}>
@@ -61,6 +62,7 @@ const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories }) => {
                                     </TabPanel>
                                 ))}
                             </TabContent>
+                            {children}
                         </div>
                     </div>
                 </TabsProvider>
