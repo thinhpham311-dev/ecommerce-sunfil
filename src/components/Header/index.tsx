@@ -1,4 +1,4 @@
-// components/Header/index.js
+'use client';
 import React from 'react';
 import HeaderTopBar from './HeaderTopBar';
 import HeaderMainBar from './HeaderMainBar';

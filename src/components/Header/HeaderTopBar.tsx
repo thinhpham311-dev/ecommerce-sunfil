@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { SaleIcon } from "@/constants/icons.constant"
 import { CONTACTMENU_DATA } from "@/data/navbarMenu.data"
