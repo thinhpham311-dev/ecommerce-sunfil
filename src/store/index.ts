@@ -1,46 +1,53 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { persistReducer, persistStore } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { combineReducers } from "redux";
-import counterReducer from "./slices/counterSlice";
-import filtersReducer from "./slices/filtersSlice"
-import { PERSIST_STORE_NAME } from "@/constants/app.constant"
-import sortReducer from "./slices/sortSlice"
+import { PERSIST_STORE_NAME } from '@/constants/app.constant';
+import rootReducer, { RootReducerState } from './rootReducer';
+import { configureStore, Middleware, Reducer } from '@reduxjs/toolkit';
+import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { Store } from 'redux';
 
-import {
-    FLUSH,
-    REHYDRATE,
-    PAUSE,
-    PERSIST,
-    PURGE,
-    REGISTER,
-} from "redux-persist";
+interface ExtendedStore extends Store {
+    asyncReducers: Record<string, Reducer>;
+}
 
-const rootReducer = combineReducers({
-    counter: counterReducer,
-    filters: filtersReducer,
-    sort: sortReducer
-});
+const middlewares: Middleware[] = [];
 
-const persistConfig = {
+const persistConfig: PersistConfig<RootReducerState> = {
     key: PERSIST_STORE_NAME,
+    keyPrefix: '',
     storage,
-    whitelist: ["counter", "filters", "sort"],
+    whitelist: ['auth', 'base'],
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-export const store = configureStore({
-    reducer: persistedReducer,
+const store = configureStore({
+    reducer: persistReducer(persistConfig, rootReducer() as Reducer),
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            },
-        }),
-});
+            immutableCheck: false,
+            serializableCheck: false,
+        }).concat(middlewares),
+    devTools: process.env.NEXT_PUBLIC_NODE_ENV === 'development',
+}) as ExtendedStore;
+
+store.asyncReducers = {};
 
 export const persistor = persistStore(store);
 
+export const injectReducer = (key: string, reducer: Reducer): typeof store | false => {
+    if (store.asyncReducers[key]) {
+        return false;
+    }
+    store.asyncReducers[key] = reducer;
+    store.replaceReducer(
+        persistReducer(
+            persistConfig,
+            rootReducer(store.asyncReducers) as Reducer
+        )
+    );
+    persistor.persist();
+    return store;
+};
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+export default store;
