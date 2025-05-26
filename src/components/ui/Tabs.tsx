@@ -1,111 +1,116 @@
-"use client"
-import React, { createContext, useContext, useReducer, ReactNode, Dispatch } from "react";
+"use client";
 
-export type Tab = {
-    label: string;
-    content: React.ReactNode;
-};
 
-type TabsState = {
-    activeIndex: number;
-};
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-type TabsAction = {
-    type: "SET_ACTIVE";
-    payload: number;
-};
-
-type TabsContextType = {
-    state: TabsState;
-    dispatch: Dispatch<TabsAction>;
-};
+interface TabsContextType {
+    activeTab: string;
+    setActiveTab: (key: string) => void;
+    type?: 'click' | 'hover';
+}
 
 const TabsContext = createContext<TabsContextType | undefined>(undefined);
 
-const tabsReducer = (state: TabsState, action: TabsAction): TabsState => {
-    switch (action.type) {
-        case "SET_ACTIVE":
-            return { ...state, activeIndex: action.payload };
-        default:
-            return state;
+const useTabs = (): TabsContextType => {
+    const context = useContext(TabsContext);
+    if (!context) {
+        throw new Error('useTabs must be used within a TabsProvider');
     }
+    return context;
 };
 
-type TabsProviderProps = {
+interface TabsProviderProps {
+    defaultTab: string;
     children: ReactNode;
-    defaultIndex?: number;
-};
+    type?: 'click' | 'hover';
 
-const TabsProvider = ({ children, defaultIndex = 0 }: TabsProviderProps) => {
-    const [state, dispatch] = useReducer(tabsReducer, {
-        activeIndex: defaultIndex,
-    });
+}
+
+const TabsProvider: React.FC<TabsProviderProps> = ({
+    defaultTab,
+    children,
+    type = 'click',
+}) => {
+    const [activeTab, setActiveTab] = useState(defaultTab);
 
     return (
-        <TabsContext.Provider value={{ state, dispatch }}>
+        <TabsContext.Provider value={{ activeTab, setActiveTab, type }}>
             {children}
         </TabsContext.Provider>
     );
 };
 
-export const useTabs = (): TabsContextType => {
-    const context = useContext(TabsContext);
-    if (!context) {
-        throw new Error("useTabs must be used within a TabsProvider");
-    }
-    return context;
+interface TabListProps {
+    children: ReactNode;
+}
+
+const TabList: React.FC<TabListProps> = ({ children }) => {
+    return <div>{children}</div>;
 };
 
-type TabItemProps = {
-    label: string;
-    isActive: boolean;
-    onClick: () => void;
-};
+interface TabItemProps {
+    tabKey: string;
+    children: ReactNode;
+}
 
-const TabItem: React.FC<TabItemProps> = ({ label, isActive, onClick }) => {
+const TabItem: React.FC<TabItemProps> = ({ tabKey, children }) => {
+    const { activeTab, setActiveTab, type } = useTabs();
+    const isActive = activeTab === tabKey;
+
+    const handleSelect = () => setActiveTab(tabKey);
+
     return (
         <button
-            className={`py-2 px-4 font-medium ${isActive
-                ? "border-b-2 border-blue-600 text-blue-600"
-                : "text-gray-600 hover:text-black"
+            onClick={type === 'click' ? handleSelect : undefined}
+            onMouseEnter={type === 'hover' ? handleSelect : undefined}
+            className={`block w-full text-left transition-all ${isActive
+                ? 'bg-secondary text-primary font-semibold'
+                : 'bg-white hover:bg-gray-200 text-gray-800'
                 }`}
-            onClick={onClick}
         >
-            {label}
+            {children}
         </button>
     );
 };
 
-type TabListProps = {
-    tabs: Tab[];
-};
 
-const TabList: React.FC<TabListProps> = ({ tabs }) => {
-    const { state, dispatch } = useTabs();
 
-    return (
-        <div className="flex space-x-4 border-b">
-            {tabs.map((tab, index) => (
-                <TabItem
-                    key={index}
-                    label={tab.label}
-                    isActive={state.activeIndex === index}
-                    onClick={() => dispatch({ type: "SET_ACTIVE", payload: index })}
-                />
-            ))}
-        </div>
+interface TabContentProps {
+    children: React.ReactElement | React.ReactElement[];
+}
+
+const TabContent: React.FC<TabContentProps> = ({ children }) => {
+    const { activeTab } = useTabs();
+
+    // Chuyển về mảng để dễ xử lý
+    const panes = React.Children.toArray(children) as React.ReactElement[];
+
+    // Tìm pane có props.tabKey === activeTab
+    const currentPane = panes.find(
+        (child) => {
+            // Ép kiểu cho child.props
+            const props = child.props as { tabKey?: string };
+            return props.tabKey === activeTab;
+        }
     );
+
+    return <div>{currentPane || null}</div>;
 };
 
-type TabPanelProps = {
-    tabs: Tab[];
+interface TabPanelProps {
+    tabKey: string;
+    children: ReactNode;
+}
+
+const TabPanel: React.FC<TabPanelProps> = ({ children }) => {
+    return <>{children}</>;
 };
 
-const TabPanel: React.FC<TabPanelProps> = ({ tabs }) => {
-    const { state } = useTabs();
 
-    return <div className="mt-4">{tabs[state.activeIndex]?.content}</div>;
-};
-
-
-export { TabsProvider, TabList, TabItem, TabPanel }
+export {
+    TabsProvider,
+    TabList,
+    TabItem,
+    TabContent,
+    TabPanel
+}

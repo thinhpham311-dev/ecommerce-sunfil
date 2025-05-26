@@ -4,7 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 
 
-// CardHeader component
 interface CardHeaderProps {
     children: React.ReactNode;
     className?: string;
@@ -16,7 +15,6 @@ const CardHeader: React.FC<CardHeaderProps> = ({ children, className = 'pt-3 px-
     </div>
 );
 
-// CardTitle component
 interface CardTitleProps {
     children: React.ReactNode;
     className?: string;
@@ -34,7 +32,6 @@ const CardTitle: React.FC<CardTitleProps> = ({
     );
 };
 
-// CardDescription component
 interface CardDescriptionProps {
     children: React.ReactNode;
     className?: string;
@@ -52,7 +49,6 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
     );
 };
 
-// CardIcon component
 interface CardIconProps {
     icon: React.ReactNode;
     className?: string;
@@ -70,26 +66,36 @@ const CardIcon: React.FC<CardIconProps> = ({
 );
 
 
-// CardImage component
 interface CardImageProps {
     src: string;
     alt?: string;
     className?: string;
     imageClassName?: string;
+    width?: number;
+    height?: number;
+    fill?: boolean;
 }
 
 const CardImage: React.FC<CardImageProps> = ({
     src,
     alt = '',
     className = '',
-    imageClassName = 'object-cover  rounded-2xl',
+    imageClassName = 'object-cover rounded-2xl',
+    width,
+    height,
+    fill = !width && !height, // Use fill by default if width/height not provided
 }) => (
-    <div className={`w-full overflow-hidden ${className} `}>
-        <Image src={src} alt={alt} fill={true} className={imageClassName} />
+    <div className={`relative overflow-hidden ${className}`} style={{ width: width ? `${width}px` : '100%', height: height ? `${height}px` : 'auto' }}>
+        <Image
+            src={src}
+            alt={alt}
+            className={imageClassName}
+            {...(fill ? { fill: true } : { width, height })}
+        />
     </div>
 );
 
-// CardContent component
+
 interface CardContentProps {
     children: React.ReactNode;
     className?: string;
@@ -103,7 +109,6 @@ const CardContent: React.FC<CardContentProps> = ({ children, className = 'px-3 p
 
 
 
-// CardFooter component
 interface CardFooterProps {
     children: React.ReactNode;
     className?: string;
@@ -116,7 +121,6 @@ const CardFooter: React.FC<CardFooterProps> = ({ children, className = '' }) => 
 );
 
 
-// Main Card component props
 interface CardProps {
     className?: string;
     layout?: 'vertical' | 'horizontal';

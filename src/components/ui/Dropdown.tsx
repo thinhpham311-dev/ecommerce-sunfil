@@ -120,7 +120,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             onMouseLeave={handleMouseLeave}
         >
             {label}
-            {state.open && <DropdownMenu>{children}</DropdownMenu>}
+            {state.open && <DropdownMenuItems>{children}</DropdownMenuItems>}
         </div>
     );
 };
@@ -158,7 +158,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
         </Button>
     );
 };
-interface DropdownMenuProps {
+interface DropdownMenuItemsProps {
     children: React.ReactNode;
 }
 
@@ -169,7 +169,7 @@ const placementClasses: Record<string, string> = {
     'top-right': 'right-0 bottom-full  origin-bottom-right',
 };
 
-const DropdownMenu: React.FC<DropdownMenuProps> = ({ children }) => {
+const DropdownMenuItems: React.FC<DropdownMenuItemsProps> = ({ children }) => {
     const { state } = useDropdown();
 
     return (
@@ -182,4 +182,4 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ children }) => {
     );
 };
 
-export { Dropdown, DropdownMenu, DropdownButton, DropdownProvider, useDropdown };
+export { Dropdown, DropdownMenuItems, DropdownButton, DropdownProvider, useDropdown };
