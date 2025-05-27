@@ -10,7 +10,7 @@ const DropdownUser = () => {
     return <>
         <DropdownProvider trigger="hover" placement="bottom-right">
             <Dropdown label={
-                <Button variant="ghost" rounded="full" className="flex items-center gap-x-2  hover:text-primary transition-colors duration-200">
+                <Button variant="ghost" rounded="Full" size="lg" className="flex items-center gap-x-2  hover:text-primary transition-colors duration-200">
                     <UserIcon />
                     <span className="text-sm group-hover:underline">Tài khoản</span>
                 </Button>}>

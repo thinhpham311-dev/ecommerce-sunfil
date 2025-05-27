@@ -25,7 +25,7 @@ const SortOptionButton: React.FC<SortOptionButtonProps> = ({ label, isSelected, 
             onClick={onClick}
             className={`relative bg-white`}
             size='md'
-            rounded='md'
+            rounded='Md'
         >
             {label}
             {isSelected &&

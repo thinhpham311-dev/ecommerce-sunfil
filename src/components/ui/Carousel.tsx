@@ -78,7 +78,7 @@ const CarouselNavButton: React.FC<CarouselNavButtonProps> = ({
 
     return (
         <Button
-            rounded="full"
+            rounded="Full"
             variant="secondary"
             size="icon"
             className={`absolute transform -translate-y-1/2 aspect-square z-50 top-1/2 hover:bg-secondary ${sidePosition} ${baseClass}`}

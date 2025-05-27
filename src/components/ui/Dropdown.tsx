@@ -147,6 +147,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({
             className="inline-flex space-x-8 items-center gap-2 cursor-pointer"
             aria-expanded={state.open}
             aria-haspopup="true"
+            rounded='Lg'
         >
             {iconPosition === 'left' && (
                 <span className={`transition-transform duration-300 ${state.open ? 'rotate-180' : 'rotate-0'} ${iconClassName}`}>{icon}</span>
