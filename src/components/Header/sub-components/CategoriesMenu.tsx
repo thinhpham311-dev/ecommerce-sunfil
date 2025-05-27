@@ -20,7 +20,7 @@ const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories, children }
                             <TabList>
                                 {categories?.map((cat) => (
                                     <TabItem key={cat.id} tabKey={cat.id}>
-                                        <CategoryCard className="hover:shadow-none" title={cat.name} image={cat.icon} _h={40} _w={40} />
+                                        <CategoryCard hasSubmenu title={cat.name} id={cat.id} image={cat.icon} _h={40} _w={40} />
                                     </TabItem>
                                 ))}
                             </TabList>

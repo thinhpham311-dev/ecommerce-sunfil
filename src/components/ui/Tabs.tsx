@@ -112,5 +112,6 @@ export {
     TabList,
     TabItem,
     TabContent,
-    TabPanel
+    TabPanel,
+    useTabs
 }
