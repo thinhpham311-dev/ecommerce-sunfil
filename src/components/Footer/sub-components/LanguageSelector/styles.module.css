@@ -3,7 +3,7 @@
 }
 
 .trigger {
-    @apply inline-flex justify-center items-center gap-x-1.5 rounded-full bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50;
+    @apply inline-flex justify-center items-center gap-x-1.5 rounded-full px-3 py-2 text-sm font-semibold text-gray-900;
 }
 
 .icon {

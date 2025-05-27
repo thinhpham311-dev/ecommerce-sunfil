@@ -15,7 +15,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }: ProductCardProps) => 
                 className='aspect-square  relative'
                 imageClassName="object-contain h-full w-full"
             />
-            <CardHeader className='p-0 flex-grow'>
+            <CardHeader className='!p-0 flex-grow'>
                 <p className="inline-flex flex-wrap gap-2">
                     {item.isHotDeal && (
                         <Badge className="bg-badge-gradient text-danger-dark font-semibold inline-flex space-x-2">
@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }: ProductCardProps) => 
                 </CardTitle>
             </CardHeader>
 
-            <CardContent className='flex flex-col gap-y-1 p-0'>
+            <CardContent className='flex flex-col gap-y-1 !p-0'>
                 <p className='text-base text-danger font-semibold'>
                     <span>{formatCurrency(item?.discountedPrice)}</span>
                 </p>

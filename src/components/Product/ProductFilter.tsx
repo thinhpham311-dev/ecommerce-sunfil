@@ -45,21 +45,21 @@ const ProductFilter: React.FC<IProductFilter> = ({ filtersList }) => {
     }
 
     return (
-        <section className="space-y-6">
-            <Card className="py-2 px-0 bg-white rounded-lg shadow-sm">
+        <section className="space-y-6 sticky top-0 left-0">
+            <Card className="!py-2 !p-0 bg-white rounded-lg shadow-sm">
                 <CardHeader className="p-4">
                     <div className="flex items-center gap-x-2">
                         <CardIcon icon={<FilterIcon />} />
                         <CardTitle className="text-primary text-2xl font-bold">Bộ lọc</CardTitle>
                     </div>
                 </CardHeader>
-                <hr className="border-gray-200 my-2" />
-                <CardContent className="p-0">
+                <hr className="border-gray-200 my-0" />
+                <CardContent className="!p-0">
                     <Accordion>
                         {(Object.entries(filters.groups) as [string, IGroup][]).map(([groupKey, group]) => (
                             <AccordionItem key={groupKey} defaultOpen={true}>
-                                <Card className="p-0 border-none shadow-none">
-                                    <CardHeader className="p-3">
+                                <Card className="!p-0 border-none shadow-none">
+                                    <CardHeader className="!p-3">
                                         <AccordionHeader className="p-0 hover:no-underline">
                                             <h2 className="font-bold text-lg">
                                                 {group.title}
@@ -67,7 +67,7 @@ const ProductFilter: React.FC<IProductFilter> = ({ filtersList }) => {
                                         </AccordionHeader>
                                     </CardHeader>
                                     <AccordionCollapse>
-                                        <CardContent className="pb-2 px-4">
+                                        <CardContent className="!pb-2 !px-4">
                                             <div className="space-y-3">
                                                 {group.options.map((option) => (
                                                     <label
