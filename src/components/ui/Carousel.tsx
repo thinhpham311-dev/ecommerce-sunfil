@@ -81,7 +81,7 @@ const CarouselNavButton: React.FC<CarouselNavButtonProps> = ({
             rounded="Full"
             variant="secondary"
             size="icon"
-            className={`absolute transform -translate-y-1/2 aspect-square z-50 top-1/2 hover:bg-secondary ${sidePosition} ${baseClass}`}
+            className={`absolute transform -translate-y-1/2 aspect-square z-50 top-1/2 !bg-secondary !hover:bg-secondary ${sidePosition} ${baseClass}`}
             aria-label={isPrev ? 'Previous' : 'Next'}
         >
             <Icon size={iconSize} strokeWidth={strokeWidth} color={iconColor} />

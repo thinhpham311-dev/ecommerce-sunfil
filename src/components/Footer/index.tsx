@@ -47,10 +47,10 @@ const Footer: React.FC = () => {
                 {showScrollToTop && (
                     <Button
                         onClick={scrollToTop}
-                        className={styles.scrollToTopButton}
                         size='icon'
                         variant='ghost'
                         rounded='Full'
+                        className='!bg-white'
                         aria-label="Scroll to top"
                     >
                         <AltUpIcon size={24} strokeWidth={1.5} />

@@ -23,17 +23,16 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
     hasSubmenu = false,
 }) => {
     const { activeTab } = useTabs();
-    console.log(activeTab)
     return (
         <Card
             layout="horizontal"
             className={clsx(
-                "flex items-center justify-between gap-4 rounded-xl p-4",
+                `flex items-center justify-between  !p-4`,
                 className
             )}
         >
             <div className="flex items-center gap-4">
-                <CardHeader className="p-0">
+                <CardHeader className="!p-0">
                     <CardImage
                         src={image ?? "/images/not-found/icon-not-found.jpg"}
                         alt={title}
@@ -42,7 +41,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
                         className="object-cover rounded-md"
                     />
                 </CardHeader>
-                <CardContent className="space-y-1">
+                <CardContent className="space-y-1 !p-0">
                     <h3 className="text-base font-semibold">{title}</h3>
                 </CardContent>
             </div>

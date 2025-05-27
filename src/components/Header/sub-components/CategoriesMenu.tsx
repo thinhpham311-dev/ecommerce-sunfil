@@ -12,11 +12,11 @@ interface ICategoriesMenuProps {
 
 const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories, children }) => {
     return (
-        <Card className="lg:min-w-[1400px] mx-auto container p-0">
-            <CardContent className="p-3">
+        <Card className="lg:min-w-[1400px] mx-auto container !p-0">
+            <CardContent className="!p-0 bg-[--background]">
                 <TabsProvider defaultTab={categories[0]?.id} type="hover">
-                    <div className="grid 2xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-cols-1 md:gap-y-10 gap-y-5 gap-x-5">
-                        <div className="2xl:col-span-3 lg:col-span-2 md:col-span-2 col-span-1">
+                    <div className="grid 2xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-cols-1 md:gap-y-10 gap-y-5">
+                        <div className="2xl:col-span-3 lg:col-span-2 md:col-span-2 col-span-1 bg-white">
                             <TabList>
                                 {categories?.map((cat) => (
                                     <TabItem key={cat.id} tabKey={cat.id}>
@@ -25,7 +25,7 @@ const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories, children }
                                 ))}
                             </TabList>
                         </div>
-                        <div className="2xl:col-span-9 lg:col-span-8 md:col-span-6 col-span-1 grid gap-5">
+                        <div className="2xl:col-span-9 lg:col-span-8 md:col-span-6 col-span-1 grid gap-5 p-4">
                             <TabContent>
                                 {categories?.map((cat) => (
                                     <TabPanel key={cat.id} tabKey={cat.id}>

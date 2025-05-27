@@ -8,7 +8,7 @@ import { HamberIcon } from "@/constants/icons.constant"
 
 const DropdownMenu = () => {
     return <>
-        <DropdownProvider trigger="click" >
+        <DropdownProvider trigger="hover" >
             <Dropdown label={
                 <DropdownButton>
                     <div className="flex items-center gap-2">
