@@ -1,5 +1,5 @@
 "use client";
-import { Button, Card, CardContent, CardImage, CardTitle, Badge, CardHeader } from '@/components/ui';
+import { Card, CardContent, CardImage, CardTitle, Badge, CardHeader } from '@/components/ui';
 import { IProduct } from '@/interfaces/IProduct';
 import { formatCurrency } from "@/utils"
 import { FireIcon } from "@/constants/icons.constant"
