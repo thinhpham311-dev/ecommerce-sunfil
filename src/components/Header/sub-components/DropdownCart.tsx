@@ -7,7 +7,7 @@ import { PRODUCTS_DATA } from "@/mocks/data/product.data"
 
 const DropdownCart = () => {
     return <>
-        <DropdownProvider trigger="hover" placement="bottom-right">
+        <DropdownProvider trigger="hover" placement="bottom-left">
             <Dropdown label={
                 <Button variant="ghost" rounded="full" className="flex items-center gap-x-2  hover:text-primary transition-colors duration-200">
                     <div className="relative aspect-square p-2">
