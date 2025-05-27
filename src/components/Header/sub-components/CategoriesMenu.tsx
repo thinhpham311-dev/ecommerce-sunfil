@@ -30,7 +30,7 @@ const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories, children }
                                 {categories?.map((cat) => (
                                     <TabPanel key={cat.id} tabKey={cat.id}>
                                         {cat.sub_categories.length === 0 ? (
-                                            <div className="flex items-center justify-center h-full w-full">
+                                            <div className="flex items-center justify-center bg-white h-[230px] w-full">
                                                 <p>Không có danh mục con.</p>
                                             </div>
                                         ) : (
@@ -42,7 +42,7 @@ const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories, children }
                                                         image={sub.icon}
                                                         _h={70}
                                                         _w={70}
-                                                        className="border hover:bg-secondary hover:text-primary"
+                                                        className="border bg-white hover:bg-secondary hover:text-primary"
                                                     />
                                                 ))}
 
@@ -53,7 +53,7 @@ const CategoriesMenu: React.FC<ICategoriesMenuProps> = ({ categories, children }
                                                             image="/images/categories/show-more-dot-icon.svg"
                                                             _h={70}
                                                             _w={70}
-                                                            className="border hover:bg-secondary hover:text-primary"
+                                                            className="border bg-white hover:bg-secondary hover:text-primary"
                                                         />
                                                     </div>
                                                 )}

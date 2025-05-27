@@ -1,10 +1,4 @@
-export interface ISortListOption {
+export interface ISortOption {
     label: string;
     value: string;
-}
-
-export interface ISortPriceOption {
-    label: string;
-    value: string;
-
 }

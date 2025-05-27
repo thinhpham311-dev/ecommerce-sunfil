@@ -2,14 +2,14 @@
 
 import { Button } from '@/components/ui';
 import React from 'react';
-import { ISortListOption } from '@/interfaces/ISortOption';
+import { ISortOption } from '@/interfaces/ISortOption';
 import { CheckIcon } from '@/constants/icons.constant';
 import { setSortBy } from "@/store/base/sortSlice"
 import { RootState } from "@/store"
 import { useAppDispatch, useAppSelector } from '@/utils/hooks/useStoreIO';
 
 interface SortOptionsProps {
-    options: ISortListOption[];
+    options: ISortOption[];
 }
 
 interface SortOptionButtonProps {
