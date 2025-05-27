@@ -1,0 +1,84 @@
+/* components/Button.module.css */
+
+.btn {
+    @apply font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50;
+}
+
+/* Variants */
+.primary {
+    @apply bg-primary-base text-white hover:bg-primary-dark focus:ring-primary;
+}
+
+.secondary {
+    @apply bg-secondary text-text-primary hover:bg-primary/10 focus:ring-primary;
+}
+
+.danger {
+    @apply bg-danger text-white hover:bg-red-800 focus:ring-danger;
+}
+
+.outline {
+    @apply bg-transparent border border-primary text-primary hover:bg-primary/10 focus:ring-primary;
+}
+
+.ghost {
+    @apply bg-transparent text-text-secondary hover:bg-black/5 focus:ring-black/20;
+}
+
+.default {
+    @apply bg-white text-black hover:text-white hover:bg-primary-dark focus:ring-primary border border-white;
+}
+
+/* Sizes */
+.sm {
+    @apply py-1 px-3 text-sm;
+}
+
+.md {
+    @apply py-2 px-4 text-base;
+}
+
+.lg {
+    @apply py-3 px-6 text-lg;
+}
+
+.icon {
+    @apply w-10 h-10 flex items-center justify-center text-base;
+}
+
+.roundNone {
+    @apply rounded-none;
+}
+
+.roundedSm {
+    @apply rounded-sm;
+}
+
+.roundMd {
+    @apply rounded-md;
+}
+
+.roundedLg {
+    @apply rounded-lg;
+}
+
+.roundedXl {
+    @apply rounded-xl;
+}
+
+.rounded2xl {
+    @apply rounded-2xl;
+}
+
+.rounded3xl {
+    @apply rounded-3xl;
+}
+
+.roundedfull {
+    @apply rounded-full;
+}
+
+/* Disabled */
+.disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
