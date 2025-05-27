@@ -10,7 +10,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ item }: ProductCardProps) => {
     return (
-        <Card className='bg-white p-3 h-full flex flex-col  gap-y-3'>
+        <Card className='bg-white p-3 h-full gap-y-3'>
             <CardImage src={item.imageUrl} alt={item?.name}
                 className='aspect-square  relative'
                 imageClassName="object-contain h-full w-full"

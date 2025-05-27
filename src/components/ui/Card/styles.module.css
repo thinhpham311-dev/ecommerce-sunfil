@@ -1,0 +1,52 @@
+/* styles/Card.module.css */
+.card {
+    @apply flex bg-white p-3 h-full;
+}
+
+.cardVertical {
+    @apply flex-col;
+}
+
+.cardHorizontal {
+    @apply flex-row items-center;
+}
+
+.cardClickable {
+    @apply cursor-pointer;
+}
+
+.cardHeader {
+    @apply pt-3 px-3;
+}
+
+.cardContent {
+    @apply flex flex-col px-3 pb-3;
+}
+
+.cardFooter {
+    @apply w-full;
+}
+
+.cardTitle {
+    @apply text-xl font-semibold text-gray-900;
+}
+
+.cardDescription {
+    @apply text-sm text-gray-600;
+}
+
+.cardIconContainer {
+    @apply flex items-center justify-center;
+}
+
+.cardIcon {
+    @apply text-2xl text-gray-500;
+}
+
+.cardImageContainer {
+    @apply relative overflow-hidden;
+}
+
+.cardImage {
+    @apply object-contain rounded-2xl;
+}
