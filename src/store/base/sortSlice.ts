@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SORTOPTION_DATA, PRICESORT_DATA } from '@/data/sort.data';
+import { SORTOPTION_DATA, PRICESORT_DATA } from '@/mocks/data/sort.data';
 
 interface SortState {
     sortBy: string;

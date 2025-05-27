@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
 import { APP_NAME, APP_DES } from "@/constants/app.constant";
@@ -6,7 +7,6 @@ import { epilogue } from "./fonts";
 import Header from "@/components/Header";
 import StoreLocator from "@/components/StoreLocator"
 import Footer from "@/components/Footer";
-
 
 export const metadata: Metadata = {
   title: APP_NAME,

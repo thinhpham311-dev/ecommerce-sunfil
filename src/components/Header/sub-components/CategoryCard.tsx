@@ -21,7 +21,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         <Card
             layout="horizontal"
             className={clsx(
-                "flex items-center gap-4 rounded-xl p-4 shadow-sm transition hover:shadow-md",
+                "flex items-center gap-4 rounded-xl p-4 shadow-sm transition hover:shadow-md ",
                 className
             )}
         >

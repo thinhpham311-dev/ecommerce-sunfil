@@ -1,13 +1,13 @@
 "use client";
 import React from 'react';
-import { ISortPriceOption } from '@/interfaces/ISortOption';
+import { ISortOption } from '@/interfaces/ISortOption';
 import { Select } from "@/components/ui";
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from "@/store";
 import { setPriceBy } from "@/store/base/sortSlice";
 
 interface PriceSelectSortProps {
-    options: ISortPriceOption[];
+    options: ISortOption[];
 }
 
 const PriceSelectSort: React.FC<PriceSelectSortProps> = ({ options }) => {

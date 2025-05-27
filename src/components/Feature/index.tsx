@@ -1,5 +1,5 @@
 import FeatureCard from "./FeatureCard"
-import { FEATURE_DATA } from "@/data/feature.data";
+import { FEATURE_DATA } from "@/mocks/data/feature.data";
 
 const FeaturedSection: React.FC = () => {
 

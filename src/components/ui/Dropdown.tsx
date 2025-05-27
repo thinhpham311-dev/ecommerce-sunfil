@@ -174,7 +174,7 @@ const DropdownMenuItems: React.FC<DropdownMenuItemsProps> = ({ children }) => {
 
     return (
         <div
-            className={`absolute ${placementClasses[state.placement]} min-w-[200px]  bg-white border border-gray-200 rounded-md shadow-lg z-50`}
+            className={`absolute ${placementClasses[state.placement]} min-w-[200px]  bg-[--background] border border-gray-200 rounded-md shadow-lg z-50`}
             role="menu"
         >
             {children}

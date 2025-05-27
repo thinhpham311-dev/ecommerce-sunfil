@@ -1,9 +1,9 @@
 "use client";
 
-import { PRODUCTS_DATA } from "@/data/product.data";
-import { HEROIMAGES_DATA } from "@/data/hero.data";
-import { FILTER_DATA } from "@/data/filter.data";
-import { SORTOPTION_DATA, PRICESORT_DATA } from "@/data/sort.data"
+import { PRODUCTS_DATA } from "@/mocks/data/product.data";
+import { HEROIMAGES_DATA } from "@/mocks/data/hero.data";
+import { FILTER_DATA } from "@/mocks/data/filter.data";
+import { SORTOPTION_DATA, PRICESORT_DATA } from "@/mocks/data/sort.data"
 
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import Feature from "@/components/Feature";
@@ -43,7 +43,7 @@ export default function Home() {
                 <SortOptions options={SORTOPTION_DATA} />
                 <PriceSelectSort options={PRICESORT_DATA} />
               </ProductHeader>
-              <ProductGrid products={PRODUCTS_DATA} columns={{ base: 2, md: 3, lg: 4, '2xl': 5 }} />
+              <ProductGrid products={PRODUCTS_DATA} />
             </div>
           </div>
         </div>
