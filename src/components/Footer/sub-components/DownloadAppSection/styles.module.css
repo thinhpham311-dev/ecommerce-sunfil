@@ -1,0 +1,39 @@
+.container {
+    @apply grid space-y-4 place-items-end;
+}
+
+.titleWrapper {
+    @apply max-w-full w-[230px];
+}
+
+.title {
+    @apply font-semibold text-text-secondary text-2xl;
+}
+
+.linksWrapper {
+    @apply grid gap-3;
+}
+
+.button {
+    @apply flex max-w-full w-[230px] items-center justify-start space-x-3 text-white px-4 py-2 rounded-xl transition-colors duration-200;
+}
+
+.googlePlay {
+    @apply bg-black hover:bg-gray-800;
+}
+
+.appleStore {
+    @apply bg-blue-600 hover:bg-blue-700;
+}
+
+.textGroup {
+    @apply flex flex-col text-left;
+}
+
+.subText {
+    @apply text-xs opacity-80;
+}
+
+.mainText {
+    @apply text-base font-medium;
+}

@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import React from 'react';
 import Link from 'next/link';
+import styles from './styles.module.css';
 
 const SitemapLinks: React.FC = () => {
     const links = [
@@ -11,12 +12,12 @@ const SitemapLinks: React.FC = () => {
     ];
 
     return (
-        <div className="flex flex-col space-y-4">
-            <h3 className="font-semibold text-text-secondary text-2xl">Sitemap</h3>
-            <ul className="space-y-2">
+        <div className={styles.container}>
+            <h3 className={styles.title}>Sitemap</h3>
+            <ul className={styles.list}>
                 {links.map((link) => (
                     <li key={link.name}>
-                        <Link href={link.href} className="text-text-secondary text-base hover:text-primary transition-colors duration-200">
+                        <Link href={link.href} className={styles.link}>
                             {link.name}
                         </Link>
                     </li>

@@ -1,22 +1,19 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 import CompanyInfo from './sub-components/CompanyInfo';
 import SitemapLinks from './sub-components/SitemapLinks';
 import LegalLinks from './sub-components/LegalLinks';
 import DownloadAppSection from './sub-components/DownloadAppSection';
 import LanguageSelector from './sub-components/LanguageSelector';
-import { AltUpIcon } from "@/constants/icons.constant" // Đảm bảo icon này tồn tại và được import đúng
+import { AltUpIcon } from "@/constants/icons.constant";
+import styles from './styles.module.css';
 
 const Footer: React.FC = () => {
     const [showScrollToTop, setShowScrollToTop] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 300) {
-                setShowScrollToTop(true);
-            } else {
-                setShowScrollToTop(false);
-            }
+            setShowScrollToTop(window.scrollY > 300);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -24,37 +21,32 @@ const Footer: React.FC = () => {
     }, []);
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
-        <footer className="relative bg-footer-pattern bg-cover bg-center bg-no-repeat py-16">
-            <div className="container  grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-6">
-                <div className='col-span-full md:col-span-2 lg:col-span-6'>
+        <footer className={styles.footer}>
+            <div className={styles.gridContainer}>
+                <div className={styles.companyInfoWrapper}>
                     <CompanyInfo />
                 </div>
-                <div className='col-span-full md:col-span-1 lg:col-span-2'>
+                <div className={styles.sitemapWrapper}>
                     <SitemapLinks />
                 </div>
-                <div className='col-span-full md:col-span-1 lg:col-span-2'>
+                <div className={styles.legalWrapper}>
                     <LegalLinks />
                 </div>
-                <div className='col-span-full md:col-span-4 lg:col-span-2'>
+                <div className={styles.downloadAppWrapper}>
                     <DownloadAppSection />
                 </div>
             </div>
 
-            {/* Phần Language Selector và Scroll to Top */}
-            <div className="container mx-auto px-4 mt-8 flex justify-end items-center gap-4">
+            <div className={styles.bottomBar}>
                 <LanguageSelector />
                 {showScrollToTop && (
                     <button
                         onClick={scrollToTop}
-                        // Thêm lại các style cần thiết cho nút cuộn lên đầu
-                        className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                        className={styles.scrollToTopButton}
                         aria-label="Scroll to top"
                     >
                         <AltUpIcon size={24} strokeWidth={1.5} />

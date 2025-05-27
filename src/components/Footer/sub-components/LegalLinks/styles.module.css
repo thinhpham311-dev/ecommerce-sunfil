@@ -1,0 +1,15 @@
+.container {
+    @apply flex flex-col space-y-4;
+}
+
+.title {
+    @apply font-semibold text-text-secondary text-2xl;
+}
+
+.list {
+    @apply space-y-2;
+}
+
+.link {
+    @apply text-text-secondary text-base hover:text-primary transition-colors duration-200;
+}
