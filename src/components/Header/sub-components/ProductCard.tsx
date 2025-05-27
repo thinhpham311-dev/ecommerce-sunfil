@@ -1,5 +1,5 @@
 "use client";
-import { Button, Card, CardContent, CardImage, CardTitle, Badge, CardHeader, CardFooter } from '@/components/ui';
+import { Button, Card, CardContent, CardImage, CardTitle, Badge, CardHeader } from '@/components/ui';
 import { IProduct } from '@/interfaces/IProduct';
 import { formatCurrency } from "@/utils"
 import { FireIcon } from "@/constants/icons.constant"
@@ -10,7 +10,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ item }: ProductCardProps) => {
     return (
-        <Card className='bg-white p-3 h-full flex flex-col  gap-y-3'>
+        <Card clickable className='bg-white p-3 h-full flex flex-col  gap-y-3'>
             <CardImage src={item.imageUrl} alt={item?.name}
                 className='aspect-square  relative'
                 imageClassName="object-contain h-full w-full"
@@ -38,12 +38,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ item }: ProductCardProps) => 
                     <span className="text-danger font-medium">-{item?.discountPercentage}%</span>
                 </p>
             </CardContent>
-
-            <CardFooter className="p-0 mt-3">
-                <Button type="button" variant='secondary' className='w-full'>
-                    <span className='text-primary'>Mua Ngay</span>
-                </Button>
-            </CardFooter>
         </Card>
     );
 };
