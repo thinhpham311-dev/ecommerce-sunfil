@@ -1,0 +1,16 @@
+/* components/Navigation.module.css */
+.nav {
+    @apply hidden lg:block;
+}
+
+.navList {
+    @apply flex gap-x-6;
+}
+
+.navItem {
+    @apply flex items-center space-x-2 transition-colors duration-200 text-base font-normal;
+}
+
+.navItemActive {
+    @apply text-primary font-semibold;
+}
