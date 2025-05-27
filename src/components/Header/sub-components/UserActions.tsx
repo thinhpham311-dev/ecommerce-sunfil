@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { UserIcon, FlatVNIcon } from '@/constants/icons.constant'; // Đảm bảo import HeartIcon
+import { FlatVNIcon } from '@/constants/icons.constant'; // Đảm bảo import HeartIcon
 import DropdownCart from "./DropdownCart"
 import DropdownUser from "./DropdownUser"
 
