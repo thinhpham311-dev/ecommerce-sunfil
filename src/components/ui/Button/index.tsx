@@ -3,8 +3,8 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-type RoundedVariant = 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
-type ButtonVariant = 'default' | 'primary' | 'secondary' | 'danger' | 'outline' | 'ghost';
+type RoundedVariant = 'None' | 'Sm' | 'Md' | 'Lg' | 'Xl' | 'Xxl' | 'Xxxl' | 'Full';
+type ButtonVariant = 'default' | 'primary' | 'secondary' | 'danger' | 'outline' | 'ghost' | 'dark';
 type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
 
 interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'size'> {
@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
     size = 'md',
     disabled = false,
     className = '',
-    rounded = 'md',
+    rounded = 'Md',
     ...props
 }) => {
     return (

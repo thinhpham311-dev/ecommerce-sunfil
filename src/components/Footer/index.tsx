@@ -7,6 +7,7 @@ import DownloadAppSection from './sub-components/DownloadAppSection';
 import LanguageSelector from './sub-components/LanguageSelector';
 import { AltUpIcon } from "@/constants/icons.constant";
 import styles from './styles.module.css';
+import { Button } from '../ui';
 
 const Footer: React.FC = () => {
     const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -44,13 +45,16 @@ const Footer: React.FC = () => {
             <div className={styles.bottomBar}>
                 <LanguageSelector />
                 {showScrollToTop && (
-                    <button
+                    <Button
                         onClick={scrollToTop}
                         className={styles.scrollToTopButton}
+                        size='icon'
+                        variant='ghost'
+                        rounded='Full'
                         aria-label="Scroll to top"
                     >
                         <AltUpIcon size={24} strokeWidth={1.5} />
-                    </button>
+                    </Button>
                 )}
             </div>
         </footer>

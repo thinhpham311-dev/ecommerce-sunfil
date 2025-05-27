@@ -1,8 +1,8 @@
 "use client";
 import React from 'react';
-import Link from 'next/link';
 import { AppleStoreIcon, GooglePlayIcon } from "@/constants/icons.constant";
 import styles from './styles.module.css';
+import { Button } from '@/components/ui';
 
 const DownloadAppSection: React.FC = () => {
     return (
@@ -11,30 +11,20 @@ const DownloadAppSection: React.FC = () => {
                 <h3 className={styles.title}>Download App</h3>
             </div>
             <div className={styles.linksWrapper}>
-                <Link
-                    href="https://play.google.com/store/apps/details?id=your.app.id"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.button} ${styles.googlePlay}`}
-                >
+                <Button variant='dark' rounded='Xl' size='lg' className='flex items-center gap-x-3'>
                     <GooglePlayIcon />
                     <div className={styles.textGroup}>
                         <span className={styles.subText}>Get It On</span>
                         <span className={styles.mainText}>Google Play Store</span>
                     </div>
-                </Link>
-                <Link
-                    href="https://apps.apple.com/us/app/your-app-name/id123456789"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.button} ${styles.appleStore}`}
-                >
+                </Button>
+                <Button variant='primary' rounded='Xl' size='lg' className='flex items-center gap-x-3'>
                     <AppleStoreIcon />
                     <div className={styles.textGroup}>
                         <span className={styles.subText}>Download from</span>
                         <span className={styles.mainText}>Apple App Store</span>
                     </div>
-                </Link>
+                </Button>
             </div>
         </div>
     );
